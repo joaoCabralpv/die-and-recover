@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://3bomd0qdtmgd"]
+
+[ext_resource type="PackedScene" uid="uid://b8ietmixt3o1c" path="res://scenes/characters/book/book.tscn" id="1_icg7n"]
+[ext_resource type="Texture2D" uid="uid://c64bbea2pxk40" path="res://icon.svg" id="1_sqnkp"]
+[ext_resource type="PackedScene" uid="uid://85q3gxqyy03w" path="res://scenes/characters/lyrics_booklet/lyrics_booklet.tscn" id="3_1xql7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6oe6j"]
+size = Vector2(1203.5, 20)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(600.75, 638)
+shape = SubResource("RectangleShape2D_6oe6j")
+debug_color = Color(0, 0.6, 0.701961, 0.419608)
+
+[node name="Sprite2D2" type="Sprite2D" parent="StaticBody2D/CollisionShape2D"]
+position = Vector2(1.25, -0.5)
+scale = Vector2(9.40625, 0.164062)
+texture = ExtResource("1_sqnkp")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1350, 555)
+shape = SubResource("RectangleShape2D_6oe6j")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D2"]
+position = Vector2(-1.00003, 7.62939e-06)
+scale = Vector2(9.40625, 0.164062)
+texture = ExtResource("1_sqnkp")
+
+[node name="LyricsBooklet" parent="." instance=ExtResource("3_1xql7")]
+position = Vector2(231, 558)
+
+[node name="test" parent="." instance=ExtResource("1_icg7n")]
