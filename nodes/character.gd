@@ -4,7 +4,9 @@ class_name Character
 @export var walking_speed = 300
 @export var jump_speed = 1000
 var gravity = Gravity.gravity
-@export var selected :bool = false
+
+var selected :bool = false
+var is_dead :bool = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func move():

@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://bleqpdlrct8jn"]
+[gd_scene load_steps=7 format=3 uid="uid://bleqpdlrct8jn"]
 
 [ext_resource type="Script" path="res://nodes/level.gd" id="1_bi6sy"]
 [ext_resource type="Texture2D" uid="uid://c64bbea2pxk40" path="res://icon.svg" id="1_sqnkp"]
 [ext_resource type="PackedScene" uid="uid://c35ailcsss5dn" path="res://scenes/characters/book/book.tscn" id="2_dyq8a"]
 [ext_resource type="PackedScene" uid="uid://cg62544ek3hc1" path="res://scenes/characters/lyrics_booklet/lyrics_booklet.tscn" id="3_or58x"]
+[ext_resource type="PackedScene" uid="uid://dwshkas4lbxd5" path="res://scenes/hazards/spike.tscn" id="5_ykmtw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6oe6j"]
 size = Vector2(1203.5, 20)
@@ -33,7 +34,10 @@ scale = Vector2(9.40625, 0.164062)
 texture = ExtResource("1_sqnkp")
 
 [node name="Book" parent="." instance=ExtResource("2_dyq8a")]
-position = Vector2(134, 557)
+position = Vector2(93, 562)
 
 [node name="LyricsBooklet" parent="." instance=ExtResource("3_or58x")]
-position = Vector2(321, 560)
+position = Vector2(278, 566)
+
+[node name="Spike" parent="." instance=ExtResource("5_ykmtw")]
+position = Vector2(412, 556)
