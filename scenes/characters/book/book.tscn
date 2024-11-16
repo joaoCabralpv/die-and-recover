@@ -1,18 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://b8ietmixt3o1c"]
+[gd_scene load_steps=4 format=3 uid="uid://c35ailcsss5dn"]
 
 [ext_resource type="Script" path="res://scenes/characters/book/book.gd" id="1_4a82b"]
 [ext_resource type="Texture2D" uid="uid://ba2ubyrsdf3r6" path="res://assets/sprites/assembled images/Book.png" id="2_a28o1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pro10"]
-size = Vector2(410, 537)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1txd"]
+size = Vector2(104, 135)
 
-[node name="book" type="CharacterBody2D"]
+[node name="Book" type="CharacterBody2D"]
+position = Vector2(0, 2)
+velocity = Vector2(0, 120900)
 script = ExtResource("1_4a82b")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1)
-scale = Vector2(0.25, 0.25)
-shape = SubResource("RectangleShape2D_pro10")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_a28o1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0.5)
+shape = SubResource("RectangleShape2D_q1txd")

@@ -1,17 +1,19 @@
-[gd_scene load_steps=4 format=3 uid="uid://85q3gxqyy03w"]
+[gd_scene load_steps=4 format=3 uid="uid://cg62544ek3hc1"]
 
 [ext_resource type="Script" path="res://scenes/characters/lyrics_booklet/lyrics_booklet.gd" id="1_0qwgy"]
 [ext_resource type="Texture2D" uid="uid://b0vsfm2cpkhi0" path="res://assets/sprites/assembled images/LyricsBooklet.png" id="1_cuvs8"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tp5s7"]
-size = Vector2(104, 136)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1txd"]
+size = Vector2(104, 135)
 
-[node name="LyricsBooklet" type="CharacterBody2D"]
+[node name="Lyrics_booklet" type="CharacterBody2D"]
+position = Vector2(0, 2)
+velocity = Vector2(0, 120900)
 script = ExtResource("1_0qwgy")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 0)
-shape = SubResource("RectangleShape2D_tp5s7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_cuvs8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 0.5)
+shape = SubResource("RectangleShape2D_q1txd")

@@ -1,13 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://3bomd0qdtmgd"]
+[gd_scene load_steps=6 format=3 uid="uid://bleqpdlrct8jn"]
 
-[ext_resource type="PackedScene" uid="uid://b8ietmixt3o1c" path="res://scenes/characters/book/book.tscn" id="1_icg7n"]
+[ext_resource type="Script" path="res://nodes/level.gd" id="1_bi6sy"]
 [ext_resource type="Texture2D" uid="uid://c64bbea2pxk40" path="res://icon.svg" id="1_sqnkp"]
-[ext_resource type="PackedScene" uid="uid://85q3gxqyy03w" path="res://scenes/characters/lyrics_booklet/lyrics_booklet.tscn" id="3_1xql7"]
+[ext_resource type="PackedScene" uid="uid://c35ailcsss5dn" path="res://scenes/characters/book/book.tscn" id="2_dyq8a"]
+[ext_resource type="PackedScene" uid="uid://cg62544ek3hc1" path="res://scenes/characters/lyrics_booklet/lyrics_booklet.tscn" id="3_or58x"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6oe6j"]
 size = Vector2(1203.5, 20)
 
-[node name="Node2D" type="Node2D"]
+[node name="Test_level" type="Node2D"]
+script = ExtResource("1_bi6sy")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
@@ -30,7 +32,8 @@ position = Vector2(-1.00003, 7.62939e-06)
 scale = Vector2(9.40625, 0.164062)
 texture = ExtResource("1_sqnkp")
 
-[node name="LyricsBooklet" parent="." instance=ExtResource("3_1xql7")]
-position = Vector2(231, 558)
+[node name="Book" parent="." instance=ExtResource("2_dyq8a")]
+position = Vector2(134, 557)
 
-[node name="test" parent="." instance=ExtResource("1_icg7n")]
+[node name="LyricsBooklet" parent="." instance=ExtResource("3_or58x")]
+position = Vector2(321, 560)
