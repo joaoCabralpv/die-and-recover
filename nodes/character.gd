@@ -18,12 +18,28 @@ func move():
 		velocity.y -= jump_speed
 func update():
 	velocity.y+=gravity
+	"""if velocity.y > -INF and selected:
+		for i in get_slide_collision_count():
+			var collided = get_slide_collision(i).get_collider()
+			if collided is Character :#and get_slide_collision(i).get_angle() == Vector2.UP:
+				print(self)
+				print("collision angle: "+str(get_slide_collision(i).get_angle()))
+				var character :Character = collided
+				if Extras.between(get_slide_collision(i).get_angle(), PI-0.0001, PI+0.0001):
+					print("collision from above")
+					collided.test(velocity.y)
+					
+					#collided.position.y+=velocity.y
+					#print("collided: "+str(collided))
+					#collided.move_and_slide()
+				"""
 	move_and_slide()
 	velocity.x = 0
+
 	
 #func _ready():
 	#Player.PlayerArray.push_back(self)	
-	
+
 func _process(delta):
 	if selected:
 		move()

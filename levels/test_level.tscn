@@ -15,7 +15,7 @@ script = ExtResource("1_bi6sy")
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(600.75, 638)
+position = Vector2(608.75, 700)
 shape = SubResource("RectangleShape2D_6oe6j")
 debug_color = Color(0, 0.6, 0.701961, 0.419608)
 
@@ -25,7 +25,7 @@ scale = Vector2(9.40625, 0.164062)
 texture = ExtResource("1_sqnkp")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1350, 555)
+position = Vector2(1358, 617)
 shape = SubResource("RectangleShape2D_6oe6j")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D2"]
@@ -34,10 +34,10 @@ scale = Vector2(9.40625, 0.164062)
 texture = ExtResource("1_sqnkp")
 
 [node name="Book" parent="." instance=ExtResource("2_dyq8a")]
-position = Vector2(93, 562)
+position = Vector2(101, 624)
 
 [node name="LyricsBooklet" parent="." instance=ExtResource("3_or58x")]
-position = Vector2(278, 566)
+position = Vector2(286, 628)
 
 [node name="Spike" parent="." instance=ExtResource("5_ykmtw")]
-position = Vector2(412, 556)
+position = Vector2(166, 404)
