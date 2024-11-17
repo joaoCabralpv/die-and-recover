@@ -26,13 +26,17 @@ func _ready():
 	setup_kill_areas()
 
 func _kill_player(player:Character):
+	player.kill()
 	"""for child in player.get_children():
 		if child is CollisionShape2D or CollisionPolygon2D:
 			child.Disabled = true"""
 	#print("")
-	print(str(player.name)+" died")
-	player.position = Vector2(INF,INF)
-	player.is_dead = true
+	"""print(str(player.name)+" died")
+	for child in player.get_children():
+		if child is CollisionShape2D or child is CollisionPolygon2D:
+			child.Disabled = true
+	player.is_dead = true"""
+	
 	
 func swap_character():
 	for i in range(PlayerArray.size()):

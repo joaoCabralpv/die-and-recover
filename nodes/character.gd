@@ -46,3 +46,10 @@ func _process(delta):
 	if selected:
 		move()
 	update()
+
+func kill():
+	is_dead = true
+	for child in get_children():
+		if child is CollisionPolygon2D or child is CollisionShape2D:
+			child.set_deferred("disabled",true)
+	visible = false
