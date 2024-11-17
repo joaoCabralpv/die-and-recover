@@ -4,11 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://cbijw6rrods00" path="res://assets/sprites/assembled images/Spike.png" id="2_tcl6i"]
 
 [node name="Spike" type="Area2D"]
-scale = Vector2(0.1, 0.1)
+z_index = -1
+scale = Vector2(0.075, 0.075)
 script = ExtResource("1_n62v4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_tcl6i")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-132, -170, -62, -206, 20, -400, 74, -200, 149, -153, 363, -180, 214, -31, 210, 51, 343, 226, 133, 170, 61, 207, -19, 400, -74, 203, -149, 154, -362, 181, -211, 28, -207, -49, -342, -227)
+polygon = PackedVector2Array(-132, -170, -62, -206, 20, -400, 80, -200, 149, -153, 363, -180, 214, -31, 210, 51, 343, 226, 133, 170, 61, 207, -19, 400, -74, 203, -149, 154, -362, 181, -211, 28, -207, -49, -342, -227)
