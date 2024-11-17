@@ -18,6 +18,8 @@ func move():
 		velocity.y -= jump_speed
 func update():
 	velocity.y+=gravity
+	if velocity.y < -jump_speed:
+		velocity.y = -jump_speed
 	"""if velocity.y > -INF and selected:
 		for i in get_slide_collision_count():
 			var collided = get_slide_collision(i).get_collider()
