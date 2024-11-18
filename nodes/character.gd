@@ -2,13 +2,13 @@ extends CharacterBody2D
 class_name Character
 
 @export var walking_speed = 300
-@export var jump_speed = 1000
+@export var jump_speed = 500
 var gravity = Gravity.gravity
 
 var selected :bool = false
 var is_dead :bool = false
+var in_hprc :bool = false
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
 func move():
 	if Input.is_action_pressed("right"):
 		velocity.x += walking_speed
@@ -16,34 +16,18 @@ func move():
 		velocity.x -= walking_speed
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y -= jump_speed
+		
 func update():
 	velocity.y+=gravity
+	# Caps upwards velocity to jump speed
 	if velocity.y < -jump_speed:
 		velocity.y = -jump_speed
-	"""if velocity.y > -INF and selected:
-		for i in get_slide_collision_count():
-			var collided = get_slide_collision(i).get_collider()
-			if collided is Character :#and get_slide_collision(i).get_angle() == Vector2.UP:
-				print(self)
-				print("collision angle: "+str(get_slide_collision(i).get_angle()))
-				var character :Character = collided
-				if Extras.between(get_slide_collision(i).get_angle(), PI-0.0001, PI+0.0001):
-					print("collision from above")
-					collided.test(velocity.y)
-					
-					#collided.position.y+=velocity.y
-					#print("collided: "+str(collided))
-					#collided.move_and_slide()
-				"""
 	move_and_slide()
 	velocity.x = 0
 
-	
-#func _ready():
-	#Player.PlayerArray.push_back(self)	
 
-func _process(delta):
-	if selected:
+func _process(_delta):
+	if selected and !is_dead and !in_hprc:
 		move()
 	update()
 
@@ -53,3 +37,10 @@ func kill():
 		if child is CollisionPolygon2D or child is CollisionShape2D:
 			child.set_deferred("disabled",true)
 	visible = false
+	
+func recover():
+	is_dead = true
+	for child in get_children():
+		if child is CollisionPolygon2D or child is CollisionShape2D:
+			child.set_deferred("disabled",false)
+	visible = true

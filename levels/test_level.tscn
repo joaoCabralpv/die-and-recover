@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bleqpdlrct8jn"]
+[gd_scene load_steps=8 format=3 uid="uid://bleqpdlrct8jn"]
 
 [ext_resource type="Script" path="res://nodes/level.gd" id="1_bi6sy"]
 [ext_resource type="Texture2D" uid="uid://c64bbea2pxk40" path="res://icon.svg" id="1_sqnkp"]
 [ext_resource type="PackedScene" uid="uid://c35ailcsss5dn" path="res://scenes/characters/book/book.tscn" id="2_dyq8a"]
 [ext_resource type="PackedScene" uid="uid://cg62544ek3hc1" path="res://scenes/characters/lyrics_booklet/lyrics_booklet.tscn" id="3_or58x"]
 [ext_resource type="PackedScene" uid="uid://dwshkas4lbxd5" path="res://scenes/hazards/spike.tscn" id="5_ykmtw"]
+[ext_resource type="PackedScene" uid="uid://kejrkyc0buo5" path="res://scenes/hprc/hprc.tscn" id="6_v0tm0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6oe6j"]
 size = Vector2(1203.5, 20)
@@ -25,19 +26,21 @@ scale = Vector2(9.40625, 0.164062)
 texture = ExtResource("1_sqnkp")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(1358, 617)
+position = Vector2(948, 642)
 shape = SubResource("RectangleShape2D_6oe6j")
 
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D/CollisionShape2D2"]
-position = Vector2(-1.00003, 7.62939e-06)
 scale = Vector2(9.40625, 0.164062)
 texture = ExtResource("1_sqnkp")
 
 [node name="Book" parent="." instance=ExtResource("2_dyq8a")]
-position = Vector2(101, 624)
+position = Vector2(54, 655)
 
 [node name="LyricsBooklet" parent="." instance=ExtResource("3_or58x")]
-position = Vector2(286, 628)
+position = Vector2(203, 655)
 
 [node name="Spike" parent="." instance=ExtResource("5_ykmtw")]
-position = Vector2(638, 625)
+position = Vector2(56, 660)
+
+[node name="HPRC" parent="." instance=ExtResource("6_v0tm0")]
+position = Vector2(200, 627)
