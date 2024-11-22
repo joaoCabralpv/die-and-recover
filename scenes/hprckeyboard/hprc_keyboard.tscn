@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bx71haoa5dk20"]
 
 [ext_resource type="Texture2D" uid="uid://cqy1wiuld6cpg" path="res://assets/sprites/assembled images/HPRCKeyboard.png" id="1_2chje"]
-[ext_resource type="FontFile" uid="uid://g4vd0nt1gof2" path="res://assets/11524_DigifaceRegular.ttf" id="2_qbkau"]
+[ext_resource type="FontFile" uid="uid://g4vd0nt1gof2" path="res://assets/fonts/11524_DigifaceRegular.ttf" id="2_qbkau"]
 
 [sub_resource type="Theme" id="Theme_766u7"]
 default_font = ExtResource("2_qbkau")

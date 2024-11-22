@@ -39,9 +39,10 @@ func _kill_player(object):
 	if object is Character:
 		object.kill()
 		DeadPlayerArray.push_back(object)
+		if DeadPlayerArray.size() == PlayerArray.size():
+			print("All players are dead")
 
 func _recover_player(player:Character):
-	#print("a")
 	player.recover()
 	DeadPlayerArray.erase(player)
 	
@@ -54,9 +55,7 @@ func swap_character():
 			PlayerArray[PlayerIndex].selected = true
 			return # Returns from the function if a living character is found
 	print("All players are dead")
-	#print(PlayerArray[PlayerIndex])
 
 func _process(_delta):
-	#print(DeadPlayerArray)
 	if Input.is_action_just_pressed("swap") and PlayerArray.size() > 0:
 		swap_character()

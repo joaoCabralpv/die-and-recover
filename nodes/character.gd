@@ -39,7 +39,7 @@ func kill():
 	visible = false
 	
 func recover():
-	is_dead = true
+	is_dead = false
 	for child in get_children():
 		if child is CollisionPolygon2D or child is CollisionShape2D:
 			child.set_deferred("disabled",false)
