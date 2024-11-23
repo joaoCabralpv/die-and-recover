@@ -1,0 +1,52 @@
+[gd_scene load_steps=5 format=3 uid="uid://daqq1egbwdif4"]
+
+[ext_resource type="Script" path="res://scenes/menu/level_menu/level_menu.gd" id="1_e8sdp"]
+[ext_resource type="Script" path="res://nodes/level_menu_button.gd" id="2_rpgho"]
+
+[sub_resource type="Theme" id="Theme_8ulu1"]
+default_font_size = 50
+
+[sub_resource type="Theme" id="Theme_w2xk6"]
+default_font_size = 100
+
+[node name="LevelMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e8sdp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+offset_left = 1.0
+offset_right = 1280.0
+offset_bottom = 23.0
+theme = SubResource("Theme_8ulu1")
+text = "Chose a level"
+horizontal_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+offset_left = 25.0
+offset_top = 99.0
+offset_right = 1255.0
+offset_bottom = 652.0
+theme = SubResource("Theme_w2xk6")
+theme_override_constants/h_separation = 20
+theme_override_constants/v_separation = 20
+columns = 2
+
+[node name="Button" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = " 1 "
+script = ExtResource("2_rpgho")
+LevelPath = "res://levels/test_level.tscn"
+
+[node name="Button2" type="Button" parent="GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = " 2 "
+script = ExtResource("2_rpgho")

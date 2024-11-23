@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Die and recover"
-run/main_scene="res://levels/test_level.tscn"
+run/main_scene="res://scenes/root_scene/root.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
