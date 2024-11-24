@@ -1,9 +1,13 @@
 extends Node2D
 class_name Level
 
+signal change_scene(ScenePath:String)
+
 var PlayerArray: Array[Character] = []
 var DeadPlayerArray: Array[Character] = []
 var PlayerIndex: int = 0 # Index of selected character on PlayerArray 
+
+var GoalArray: Array[Goal] = []
 
 # Puts all characters in character array
 func setup_player_array():
@@ -28,12 +32,18 @@ func setup_recovery_centers():
 		if child is Recovery:
 			var recovery_center:Recovery = child
 			recovery_center.recover.connect(_recover_player)
+			
+func setup_goals():
+	for child in get_children():
+		if child is Goal:
+			GoalArray.push_back(child)
 
 func _ready():
 	print("This game is made with godot and I need to put this link somewere in the game: godotengine.org/license\nImage assets from BFDI were taken from https://battlefordreamisland.fandom.com/wiki/Assets and are licenced under CC-BY-SA 3.0\nFont used by the HPRC is Digiface Regular")
 	setup_player_array()
 	setup_kill_areas()
 	setup_recovery_centers()
+	setup_goals()
 
 func _kill_player(object):
 	if object is Character:
@@ -55,7 +65,17 @@ func swap_character():
 			PlayerArray[PlayerIndex].selected = true
 			return # Returns from the function if a living character is found
 	print("All players are dead")
+	
+func check_goals() -> bool:
+	for goal in GoalArray:
+		print(goal)
+		if goal.colliding > 0:
+			return true
+	return false
 
 func _process(_delta):
 	if Input.is_action_just_pressed("swap") and PlayerArray.size() > 0:
 		swap_character()
+	if check_goals():
+		UnlokedLevels.unlock_level("2")
+		change_scene.emit("res://scenes/menu/level_menu/level_menu.tscn")

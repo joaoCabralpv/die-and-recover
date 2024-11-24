@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Gravity="*res://autoloads/gravity.gd"
 Extras="*res://autoloads/extras.gd"
+UnlokedLevels="*res://autoloads/unloked_levels.gd"
 
 [display]
 

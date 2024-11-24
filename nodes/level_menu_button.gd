@@ -9,6 +9,13 @@ signal level_selected(LevelPath:String)
 
 """func _ready():
 	text = Text"""
+	
+func _ready():
+	disabled = true
+	for level in UnlokedLevels._UnlokedLevels:
+		if level == text:
+			disabled = false
+			break
 
 func _pressed():
 	level_selected.emit(LevelPath)

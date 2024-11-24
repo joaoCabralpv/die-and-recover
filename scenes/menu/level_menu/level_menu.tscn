@@ -41,12 +41,13 @@ columns = 2
 [node name="Button" type="Button" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = " 1 "
+text = "1"
 script = ExtResource("2_rpgho")
 LevelPath = "res://levels/test_level.tscn"
 
 [node name="Button2" type="Button" parent="GridContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = " 2 "
+text = "2"
 script = ExtResource("2_rpgho")
+LevelPath = "res://levels/test_level2.tscn"

@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=4 uid="uid://btyqiisah1a6"]
+
+[ext_resource type="Script" path="res://nodes/level.gd" id="1_8wp5p"]
+[ext_resource type="TileSet" uid="uid://b25atyf7kr17w" path="res://tilemap.tres" id="2_qut76"]
+[ext_resource type="PackedScene" uid="uid://c35ailcsss5dn" path="res://scenes/characters/book/book.tscn" id="3_vaict"]
+
+[node name="test_level2" type="Node2D"]
+script = ExtResource("1_8wp5p")
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAJAAUAAQAAAAAAAAAJAAYAAQAAAAAAAAARAAUAAQAAAAAAAAARAAYAAQAAAAAAAAAGAAcAAQAAAAAAAAAGAAgAAQAAAAAAAAAGAAkAAQAAAAAAAAAGAAoAAQAAAAAAAAAHAAoAAQAAAAAAAAAHAAsAAQAAAAAAAAAIAAsAAQAAAAAAAAAJAAwAAQAAAAAAAAAKAAwAAQAAAAAAAAALAA0AAQAAAAAAAAAMAA0AAQAAAAAAAAANAA0AAQAAAAAAAAAOAA0AAQAAAAAAAAAPAA0AAQAAAAAAAAAQAA0AAQAAAAAAAAARAA0AAQAAAAAAAAASAA0AAQAAAAAAAAATAA0AAQAAAAAAAAAUAAwAAQAAAAAAAAAVAAwAAQAAAAAAAAAWAAsAAQAAAAAAAAAWAAoAAQAAAAAAAAAXAAoAAQAAAAAAAAAXAAkAAQAAAAAAAAAXAAgAAQAAAAAAAAA=")
+tile_set = ExtResource("2_qut76")
+
+[node name="Book" parent="." instance=ExtResource("3_vaict")]
+position = Vector2(543, 122)
