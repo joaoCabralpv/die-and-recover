@@ -1,11 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddjaph5bsdqdp"]
+[gd_scene load_steps=6 format=3 uid="uid://ddjaph5bsdqdp"]
 
 [ext_resource type="Script" path="res://scenes/menu/main_menu/main_menu.gd" id="1_4t7eo"]
+[ext_resource type="Script" path="res://scenes/menu/level_menu/button.gd" id="2_7tskd"]
 
 [sub_resource type="Theme" id="Theme_jftgq"]
 default_font_size = 100
 
 [sub_resource type="Theme" id="Theme_7grtf"]
+default_font_size = 30
+
+[sub_resource type="Theme" id="Theme_cvt7p"]
 default_font_size = 30
 
 [node name="menu" type="Control"]
@@ -37,4 +41,15 @@ offset_bottom = 479.0
 theme = SubResource("Theme_7grtf")
 text = "Play Game"
 
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 487.0
+offset_right = 807.0
+offset_bottom = 532.0
+theme = SubResource("Theme_cvt7p")
+text = "Unlock Levels"
+script = ExtResource("2_7tskd")
+
 [connection signal="button_down" from="Button" to="." method="_on_button_button_down"]
+[connection signal="button_up" from="Button2" to="Button2" method="_on_button_up"]

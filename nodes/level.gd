@@ -39,7 +39,6 @@ func setup_goals():
 			GoalArray.push_back(child)
 
 func _ready():
-	print("This game is made with godot and I need to put this link somewere in the game: godotengine.org/license\nImage assets from BFDI were taken from https://battlefordreamisland.fandom.com/wiki/Assets and are licenced under CC-BY-SA 3.0\nFont used by the HPRC is Digiface Regular")
 	setup_player_array()
 	setup_kill_areas()
 	setup_recovery_centers()

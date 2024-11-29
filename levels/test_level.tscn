@@ -14,13 +14,13 @@
 script = ExtResource("1_bi6sy")
 
 [node name="Book" parent="." instance=ExtResource("2_dyq8a")]
-position = Vector2(177, 662)
+position = Vector2(221, 664)
 
 [node name="LyricsBooklet" parent="." instance=ExtResource("3_or58x")]
 position = Vector2(507, 649)
 
 [node name="Spike" parent="." instance=ExtResource("5_ykmtw")]
-position = Vector2(165, 682)
+position = Vector2(52, 685)
 
 [node name="HPRC" parent="." instance=ExtResource("6_v0tm0")]
 position = Vector2(554, 639)

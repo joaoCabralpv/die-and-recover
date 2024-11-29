@@ -9,3 +9,7 @@ func _ready():
 			
 func level_selected(LevelPath:String):
 	change_scene.emit(LevelPath)
+
+
+func _on_button_button_up():
+	pass # Replace with function body.

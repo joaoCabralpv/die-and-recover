@@ -12,6 +12,9 @@ signal level_selected(LevelPath:String)
 	
 func _ready():
 	disabled = true
+	if UnlokedLevels.AllUnlocked == true:
+		disabled = false
+		return
 	for level in UnlokedLevels._UnlokedLevels:
 		if level == text:
 			disabled = false
