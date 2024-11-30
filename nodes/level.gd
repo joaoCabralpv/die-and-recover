@@ -9,6 +9,10 @@ var PlayerIndex: int = 0 # Index of selected character on PlayerArray
 
 var GoalArray: Array[Goal] = []
 
+var camera:LimitCamera= null
+var has_camera:bool = false
+var NotifierArray: Array[VisibleOnScreenNotifier2D] = []
+
 # Puts all characters in character array
 func setup_player_array():
 	for child in get_children():
@@ -37,12 +41,27 @@ func setup_goals():
 	for child in get_children():
 		if child is Goal:
 			GoalArray.push_back(child)
+			
+func setup_camera():
+	for child in get_children():
+		if child is LimitCamera:
+			camera = child
+			has_camera = true
+			print("!!!!!!!!!!!!!!")
+			setup_visible_notifiers()
+
+func setup_visible_notifiers():
+		for child in get_children():
+				if child is VisibleOnScreenNotifier2D:
+					NotifierArray.push_back(child)
 
 func _ready():
 	setup_player_array()
 	setup_kill_areas()
 	setup_recovery_centers()
 	setup_goals()
+	setup_camera()
+	
 
 func _kill_player(object):
 	if object is Character:
@@ -72,9 +91,14 @@ func check_goals() -> bool:
 			return true
 	return false
 
+func update_camera():
+	camera.position = PlayerArray[PlayerIndex].position
+
 func _process(_delta):
 	if Input.is_action_just_pressed("swap") and PlayerArray.size() > 0:
 		swap_character()
 	if check_goals():
 		UnlokedLevels.unlock_level("2")
 		change_scene.emit("res://scenes/menu/level_menu/level_menu.tscn")
+	if has_camera:
+		update_camera()
