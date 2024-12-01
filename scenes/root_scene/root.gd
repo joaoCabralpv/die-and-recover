@@ -6,9 +6,12 @@ func _ready():
 	get_child(-1).connect("change_scene",change_scene)
 
 func change_scene(scenePath:String):
+	var new_scene:PackedScene = load(scenePath)
 	for child in get_children():
 		remove_child(child)
-	var main_menu:PackedScene = load(scenePath)
-	add_child(main_menu.instantiate())
+		child.queue_free()
+	
+	print(new_scene.resource_name)
+	add_child(new_scene.instantiate())
 	get_child(-1).connect("change_scene",change_scene)
 	
