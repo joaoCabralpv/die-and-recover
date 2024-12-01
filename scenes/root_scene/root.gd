@@ -11,7 +11,7 @@ func change_scene(scenePath:String):
 		remove_child(child)
 		child.queue_free()
 	
-	print(new_scene.resource_name)
+	#print(new_scene.resource_name)
 	add_child(new_scene.instantiate())
 	get_child(-1).connect("change_scene",change_scene)
 	

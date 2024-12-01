@@ -11,12 +11,10 @@ func _on_body_entered(body):
 	if body is Character:
 		characters_colliding+=1
 		if characters_colliding == 1: # Presses the buton only 1 character is in the button (there were no characters in the buton before)
-			print("button pressed")
-			emit_signal("presed")	
+			presed.emit()
 
 func _on_body_exited(body):
 	if body is Character:
 		characters_colliding-=1
 		if characters_colliding == 0: # Releases the button if no character are in the button
-			print("button released")
-			emit_signal("released")
+			released.emit()

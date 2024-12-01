@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://b44n23usnfp33"]
+
+[ext_resource type="Script" path="res://scenes/characters/book/book.gd" id="1_uq3ar"]
+[ext_resource type="Texture2D" uid="uid://b0vsfm2cpkhi0" path="res://assets/sprites/assembled images/LyricsBooklet.png" id="2_1eqbl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ai82a"]
+size = Vector2(104, 135)
+
+[node name="Book" type="CharacterBody2D"]
+position = Vector2(0, 2)
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+velocity = Vector2(0, 120900)
+script = ExtResource("1_uq3ar")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1eqbl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ai82a")
+one_way_collision_margin = 10.0

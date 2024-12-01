@@ -47,7 +47,6 @@ func setup_camera():
 		if child is LimitCamera:
 			camera = child
 			has_camera = true
-			print("!!!!!!!!!!!!!!")
 			setup_visible_notifiers()
 
 func setup_visible_notifiers():
@@ -86,7 +85,7 @@ func swap_character():
 	
 func check_goals() -> bool:
 	for goal in GoalArray:
-		print(goal)
+		#print(goal)
 		if goal.colliding > 0:
 			return true
 	return false

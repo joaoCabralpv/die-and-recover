@@ -4,14 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://dn1rm2bm05ip1" path="res://assets/objects/Door.png" id="2_ufx8h"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xkr0k"]
-size = Vector2(32, 64)
+size = Vector2(32, 95)
 
 [node name="Door" type="StaticBody2D"]
 script = ExtResource("1_jxvp4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(16, -48)
 texture = ExtResource("2_ufx8h")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 z_index = -1
+position = Vector2(16, -47.5)
 shape = SubResource("RectangleShape2D_xkr0k")
