@@ -47,12 +47,6 @@ func setup_camera():
 		if child is LimitCamera:
 			camera = child
 			has_camera = true
-			setup_visible_notifiers()
-
-func setup_visible_notifiers():
-		for child in get_children():
-				if child is VisibleOnScreenNotifier2D:
-					NotifierArray.push_back(child)
 
 func _ready():
 	setup_player_array()
@@ -75,11 +69,11 @@ func _recover_player(player:Character):
 	
 func swap_character():
 	for i in range(PlayerArray.size()): # Finds the next living chracter on the PlayerIndex
-		PlayerArray[PlayerIndex].selected = false
+		PlayerArray[PlayerIndex].unselect()
 		PlayerIndex+=1
 		PlayerIndex%=PlayerArray.size() # If the PlayerIndex is bigger than max index alowed by PlayerArray, it goes back to 0
 		if !PlayerArray[PlayerIndex].is_dead: 
-			PlayerArray[PlayerIndex].selected = true
+			PlayerArray[PlayerIndex].select()
 			return # Returns from the function if a living character is found
 	print("All players are dead")
 	

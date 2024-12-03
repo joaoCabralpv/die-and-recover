@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://b0vsfm2cpkhi0" path="res://assets/sprites/assembled images/LyricsBooklet.png" id="1_cuvs8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1txd"]
-size = Vector2(104, 135)
+size = Vector2(104, 135.084)
 
 [node name="Lyrics_Bookelt" type="CharacterBody2D"]
 position = Vector2(0, 2)
 scale = Vector2(0.5, 0.5)
-collision_layer = 2
+collision_mask = 3
 velocity = Vector2(0, 120900)
 script = ExtResource("1_0qwgy")
 
@@ -17,5 +17,5 @@ script = ExtResource("1_0qwgy")
 texture = ExtResource("1_cuvs8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -0.0423183)
 shape = SubResource("RectangleShape2D_q1txd")
-one_way_collision_margin = 10.0

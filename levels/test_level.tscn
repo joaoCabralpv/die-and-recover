@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://nodes/level.gd" id="1_bi6sy"]
 [ext_resource type="PackedScene" uid="uid://c35ailcsss5dn" path="res://scenes/characters/book/book.tscn" id="2_dyq8a"]
-[ext_resource type="PackedScene" uid="uid://bodiqo4ptrtk5" path="res://scenes/characters/lyrics_booklet/_lyrics_booklet.tscn" id="3_or58x"]
+[ext_resource type="PackedScene" uid="uid://bodiqo4ptrtk5" path="res://scenes/characters/lyrics_booklet/lyrics_booklet.tscn" id="3_or58x"]
 [ext_resource type="PackedScene" uid="uid://dwshkas4lbxd5" path="res://scenes/objects/hazards/spike.tscn" id="5_ykmtw"]
 [ext_resource type="PackedScene" uid="uid://kejrkyc0buo5" path="res://scenes/hprc/hprc.tscn" id="6_v0tm0"]
 [ext_resource type="TileSet" uid="uid://b25atyf7kr17w" path="res://tilemap.tres" id="6_ya4xu"]
@@ -14,16 +14,14 @@
 script = ExtResource("1_bi6sy")
 
 [node name="Book" parent="." instance=ExtResource("2_dyq8a")]
-position = Vector2(230, 663)
-collision_layer = 1
+position = Vector2(428, 667)
 
 [node name="Lyrics Booklet" parent="." instance=ExtResource("3_or58x")]
-position = Vector2(401, 667)
-collision_layer = 1
+position = Vector2(362, 605)
 
 [node name="Spike" parent="." instance=ExtResource("5_ykmtw")]
 position = Vector2(52, 685)
-collision_mask = 1
+collision_mask = 3
 
 [node name="HPRC" parent="." instance=ExtResource("6_v0tm0")]
 position = Vector2(885, 641)

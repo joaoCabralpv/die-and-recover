@@ -9,14 +9,32 @@ var selected :bool = false
 var is_dead :bool = false
 var in_hprc :bool = false
 
+	
 func move():
 	if Input.is_action_pressed("right"):
 		velocity.x += walking_speed
 	if Input.is_action_pressed("left"):
 		velocity.x -= walking_speed
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+	if Input.is_action_just_pressed("jump") and is_on_floor() and prevent_double_jumps():
 		velocity.y -= jump_speed
-		
+
+# This function returns false if 
+func prevent_double_jumps():
+	#var return_value = false
+	for i in get_slide_collision_count():
+		var colliding = get_slide_collision(i).get_collider()
+		if colliding is Character:
+			var character:Character = colliding
+			for j in character.get_slide_collision_count():
+				if character.is_on_floor() and character.prevent_double_jumps():
+					print("true")
+					return true
+		else:
+			print("true")
+			return true
+	print("false")
+	return false
+
 func update():
 	velocity.y+=gravity
 	# Caps upwards velocity to jump speed
@@ -25,11 +43,22 @@ func update():
 	move_and_slide()
 	velocity.x = 0
 
+func extra():
+	return
 
 func _process(_delta):
 	if selected and !is_dead and !in_hprc:
 		move()
 	update()
+	extra()
+
+func select():
+	selected = true
+	collision_layer = 0b1
+	
+func unselect():
+	selected = false
+	collision_layer = 0b10
 
 func kill():
 	is_dead = true
