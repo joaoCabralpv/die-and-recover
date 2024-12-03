@@ -16,9 +16,10 @@ func move():
 	if Input.is_action_pressed("left"):
 		velocity.x -= walking_speed
 	if Input.is_action_just_pressed("jump") and is_on_floor() and prevent_double_jumps():
-		velocity.y -= jump_speed
-
-# This function returns false if 
+		velocity.y -= jump_speed #                                      ^
+#                                                                       |
+# This function prevents double jumps(jumping out of a character that is|in mid air)
+# when used in the move function here-----------------------------------/
 func prevent_double_jumps():
 	#var return_value = false
 	for i in get_slide_collision_count():
@@ -27,12 +28,9 @@ func prevent_double_jumps():
 			var character:Character = colliding
 			for j in character.get_slide_collision_count():
 				if character.is_on_floor() and character.prevent_double_jumps():
-					print("true")
 					return true
 		else:
-			print("true")
 			return true
-	print("false")
 	return false
 
 func update():
