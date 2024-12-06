@@ -8,6 +8,7 @@ var gravity = Gravity.gravity
 var selected :bool = false
 var is_dead :bool = false
 var in_hprc :bool = false
+#var velocity :Vector2 = Vector2.ZERO
 
 	
 func move():
@@ -52,11 +53,13 @@ func _process(_delta):
 
 func select():
 	selected = true
-	collision_layer = 0b1
+	#collision_layer = 0b1
+	#collision_mask = 0b100
 	
 func unselect():
 	selected = false
-	collision_layer = 0b10
+	#collision_layer = 0b10
+	#collision_mask = 0b111
 
 func kill():
 	is_dead = true

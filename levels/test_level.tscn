@@ -15,13 +15,13 @@ script = ExtResource("1_bi6sy")
 
 [node name="Book" parent="." instance=ExtResource("2_dyq8a")]
 position = Vector2(428, 667)
+collision_mask = 6
 
 [node name="Lyrics Booklet" parent="." instance=ExtResource("3_or58x")]
 position = Vector2(362, 605)
 
 [node name="Spike" parent="." instance=ExtResource("5_ykmtw")]
 position = Vector2(52, 685)
-collision_mask = 3
 
 [node name="HPRC" parent="." instance=ExtResource("6_v0tm0")]
 position = Vector2(885, 641)
@@ -37,7 +37,7 @@ position = Vector2(306, 688)
 position = Vector2(704, 704)
 
 [node name="Flag" parent="." instance=ExtResource("9_jl4hv")]
-position = Vector2(1236, 511)
+position = Vector2(1237, 687)
 
 [connection signal="presed" from="Button" to="Door" method="_on_button_presed"]
 [connection signal="released" from="Button" to="Door" method="_on_button_released"]

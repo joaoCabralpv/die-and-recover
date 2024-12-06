@@ -60,3 +60,4 @@ use_hprc={
 
 2d_physics/layer_1="unselected characters"
 2d_physics/layer_2="selected player"
+2d_physics/layer_3="objects"

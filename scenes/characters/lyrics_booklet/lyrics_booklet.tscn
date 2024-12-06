@@ -9,7 +9,7 @@ size = Vector2(104, 135.084)
 [node name="Lyrics_Bookelt" type="CharacterBody2D"]
 position = Vector2(0, 2)
 scale = Vector2(0.5, 0.5)
-collision_mask = 3
+collision_mask = 6
 velocity = Vector2(0, 120900)
 script = ExtResource("1_0qwgy")
 

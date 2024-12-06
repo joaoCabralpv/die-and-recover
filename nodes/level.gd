@@ -21,7 +21,7 @@ func setup_player_array():
 	if PlayerArray.size() == 0:
 		printerr("No characters in this level")
 		return
-	PlayerArray[0].selected = true
+	PlayerArray[0].select()
 	print(PlayerArray)
 	
 # Creates a signal to all kill areas
