@@ -17,34 +17,14 @@ var NotifierArray: Array[VisibleOnScreenNotifier2D] = []
 
 
 # Puts all characters in character array
-func setup_player_array():
-	for child in get_children():
-		if child is Character:
-			PlayerArray.push_back(child)
+func select_player():
 	if PlayerArray.size() == 0:
 		printerr("No characters in this level")
 		return
 	PlayerArray[0].select()
 	print(PlayerArray)
-	
-# Creates a signal to all kill areas
-func setup_kill_areas():
-	for child in get_children():
-		if child is KillArea:
-			var kill_area:KillArea = child
-			kill_area.body_entered.connect(_kill_player)
-			
-func setup_recovery_centers():
-	for child in get_children():
-		if child is Recovery:
-			var recovery_center:Recovery = child
-			recovery_center.recover.connect(_recover_player)
-			RecoveryCenterArray.push_back(child)
-			
-func setup_goals():
-	for child in get_children():
-		if child is Goal:
-			var goal:Goal = child
+
+func setup_goals(goal:Goal):
 			match goal.Type:
 				Types.GoalType.Green:
 					GreenFlagArray.push_back(goal)
@@ -52,23 +32,30 @@ func setup_goals():
 					RedFlagArray.push_back(goal)
 				_:
 					print("unsoported goal type")
-				
-				
-			
-func setup_camera():
+
+func setup_objects():
 	for child in get_children():
-		if child is LimitCamera:
+		print(child," ",typeof(child))
+		if child is Character:
+			print("Characters")
+			PlayerArray.push_back(child)
+		elif child is KillArea:
+			var kill_area:KillArea = child
+			kill_area.body_entered.connect(_kill_player)
+		elif child is Recovery:
+			var recovery_center:Recovery = child
+			recovery_center.recover.connect(_recover_player)
+			RecoveryCenterArray.push_back(child)
+		elif child is Goal:
+			setup_goals(child)
+		elif child is LimitCamera:
 			camera = child
 			has_camera = true
 			
 
-
 func _ready():
-	setup_player_array()
-	setup_kill_areas()
-	setup_recovery_centers()
-	setup_goals()
-	setup_camera()
+	setup_objects()
+	select_player()
 	
 
 func _kill_player(object):

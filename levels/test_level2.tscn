@@ -54,7 +54,10 @@ position = Vector2(368, 690)
 position = Vector2(408, 690)
 
 [node name="Flag3" parent="." instance=ExtResource("9_gba1i")]
-position = Vector2(248, 688)
+position = Vector2(240, 690)
+
+[node name="Flag4" parent="." instance=ExtResource("8_we6dy")]
+position = Vector2(184, 688)
 
 [connection signal="presed" from="Button" to="Door" method="_on_button_presed"]
 [connection signal="released" from="Button" to="Door" method="_on_button_released"]
