@@ -8,10 +8,12 @@ var DeadPlayerArray: Array[Character] = []
 var PlayerIndex: int = 0 # Index of selected character on PlayerArray 
 
 var GoalArray: Array[Goal] = []
+var RecoveryCenterArray: Array[Recovery] = []
 
 var camera:LimitCamera= null
 var has_camera:bool = false
 var NotifierArray: Array[VisibleOnScreenNotifier2D] = []
+
 
 # Puts all characters in character array
 func setup_player_array():
@@ -36,6 +38,7 @@ func setup_recovery_centers():
 		if child is Recovery:
 			var recovery_center:Recovery = child
 			recovery_center.recover.connect(_recover_player)
+			RecoveryCenterArray.push_back(child)
 			
 func setup_goals():
 	for child in get_children():
@@ -47,6 +50,8 @@ func setup_camera():
 		if child is LimitCamera:
 			camera = child
 			has_camera = true
+			
+
 
 func _ready():
 	setup_player_array()
@@ -67,7 +72,16 @@ func _recover_player(player:Character):
 	player.recover()
 	DeadPlayerArray.erase(player)
 	
+	
+func check_typing_hprc() -> bool:
+	for center in RecoveryCenterArray:
+		if center.typingName:
+			return true
+	return false
+
 func swap_character():
+	if check_typing_hprc():
+		return
 	for i in range(PlayerArray.size()): # Finds the next living chracter on the PlayerIndex
 		PlayerArray[PlayerIndex].unselect()
 		PlayerIndex+=1

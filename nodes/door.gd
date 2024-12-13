@@ -24,3 +24,11 @@ func _process(delta):
 		scale.y = clamp(scale.y-(speed*delta),0,1)
 	elif state == State.Close:
 		scale.y = clamp(scale.y+(speed*delta),0,1)
+
+
+func _on_button_body_entered(body):
+	pass # Replace with function body.
+
+
+func _on_button_body_exited(body):
+	pass # Replace with function body.

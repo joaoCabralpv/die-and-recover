@@ -12,12 +12,14 @@ LineEdit/constants/caret_width = 0
 LineEdit/font_sizes/font_size = 110
 
 [node name="HPRCKeyboard" type="Sprite2D"]
-position = Vector2(602, 357)
+z_index = 99
+scale = Vector2(0.105, 0.105)
 texture = ExtResource("1_2chje")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 anchors_preset = -1
 anchor_left = 0.0022779
+anchor_right = 0.0022779
 anchor_bottom = 0.0292398
 offset_left = -396.0
 offset_top = -292.0

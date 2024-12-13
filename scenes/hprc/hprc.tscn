@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/hprc/hprc.gd" id="1_ofuc5"]
 [ext_resource type="Texture2D" uid="uid://c73qvmg50ri7i" path="res://assets/sprites/assembled images/HPRC.png" id="1_rqqn5"]
-[ext_resource type="PackedScene" uid="uid://bx71haoa5dk20" path="res://scenes/hprckeyboard/hprc_keyboard.tscn" id="3_sx7im"]
+[ext_resource type="PackedScene" uid="uid://bx71haoa5dk20" path="res://nodes/hprc_keyboard.tscn" id="3_sx7im"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oufqk"]
 size = Vector2(360, 246)
@@ -26,6 +26,7 @@ position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_oufqk")
 
 [node name="HPRCKeyboard" parent="." instance=ExtResource("3_sx7im")]
+visible = false
 position = Vector2(-7.62939e-06, -320)
 scale = Vector2(0.490888, 0.502373)
 

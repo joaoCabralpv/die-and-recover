@@ -3,9 +3,7 @@ extends Recovery
 signal recover(player:Character)
 
 @onready var textInput:LineEdit = $HPRCKeyboard.get_child(0)
-var typingName:bool = false
 @onready var level:Level = $".."
-
 
 var PlayerArray:Array[Character] = []
 #var characters_in_hprc: int = 0
@@ -29,19 +27,25 @@ func hprc_handler():
 			
 func typing_handler():
 	textInput.grab_focus()
+	if Input.is_action_just_pressed("exit_hprc"):
+		exit_hprc()
 	for player in level.DeadPlayerArray: #Loops trough all dead players
 		# Checks if tyed text is equal to a name of a dead character after removig the spaces
 		if textInput.text.to_lower().replace(" ","") == player.name.to_lower().replace(" ",""): 
 			emit_signal("recover",player) 
 			player.position = position # Sets the player position to the hprc
-			textInput.text = "" # Clears the text in textInput
-			$HPRCKeyboard.visible = false
-			typingName = false
-			for character in PlayerArray:
-				character.in_hprc = false 
+			exit_hprc()
+
+func exit_hprc():
+	textInput.text = "" # Clears the text in textInput
+	$HPRCKeyboard.visible = false
+	typingName = false
+	for character in PlayerArray:
+		character.in_hprc = false 
 
 func _process(_delta):
-	if Input.is_action_just_pressed("use_hprc") and PlayerArray.size() > 0 and !typingName:
+	var selected:Character = level.PlayerArray[level.PlayerIndex]
+	if Input.is_action_just_pressed("use_hprc") and selected in PlayerArray and !typingName:
 		hprc_handler()
 	if typingName:
 		typing_handler()

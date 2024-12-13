@@ -16,12 +16,12 @@ func move():
 		velocity.x += walking_speed
 	if Input.is_action_pressed("left"):
 		velocity.x -= walking_speed
-	if Input.is_action_just_pressed("jump") and is_on_floor() and prevent_double_jumps():
-		velocity.y -= jump_speed #                                      ^
-#                                                                       |
-# This function prevents double jumps(jumping out of a character that is|in mid air)
-# when used in the move function here-----------------------------------/
-func prevent_double_jumps():
+	if Input.is_action_just_pressed("jump") and is_on_floor() :#and prevent_double_jumps():
+		velocity.y -= jump_speed                                       
+#                                                                       
+# This function prevents double jumps(jumping out of a character that is in mid air)
+# when used in the move function here(unused becuse collision between characters is disabled)
+"""func prevent_double_jumps():
 	#var return_value = false
 	for i in get_slide_collision_count():
 		var colliding = get_slide_collision(i).get_collider()
@@ -33,7 +33,7 @@ func prevent_double_jumps():
 		else:
 			return true
 	return false
-
+"""
 func update():
 	velocity.y+=gravity
 	# Caps upwards velocity to jump speed
