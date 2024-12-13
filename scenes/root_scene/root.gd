@@ -1,6 +1,10 @@
 extends Node2D
 
 func _ready():
+	print("""This game is made with godot and I need to put this link somewere in the game: godotengine.org/license
+Image assets from BFDI were taken from https://battlefordreamisland.fandom.com/wiki/Assets and are licenced under CC-BY-SA 3.0
+Font used by the HPRC is Digiface Regular""")
+
 	var main_menu:PackedScene = load("res://scenes/menu/main_menu/main_menu.tscn")
 	add_child(main_menu.instantiate())
 	get_child(-1).connect("change_scene",change_scene)

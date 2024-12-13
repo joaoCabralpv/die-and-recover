@@ -35,9 +35,7 @@ func setup_goals(goal:Goal):
 
 func setup_objects():
 	for child in get_children():
-		print(child," ",typeof(child))
 		if child is Character:
-			print("Characters")
 			PlayerArray.push_back(child)
 		elif child is KillArea:
 			var kill_area:KillArea = child
