@@ -5,9 +5,7 @@ func _ready():
 Image assets from BFDI were taken from https://battlefordreamisland.fandom.com/wiki/Assets and are licenced under CC-BY-SA 3.0
 Font used by the HPRC is Digiface Regular""")
 
-	var main_menu:PackedScene = load("res://scenes/menu/main_menu/main_menu.tscn")
-	add_child(main_menu.instantiate())
-	get_child(-1).connect("change_scene",change_scene)
+	change_scene("res://scenes/menu/main_menu/main_menu.tscn")
 
 func change_scene(scenePath:String):
 	var new_scene:PackedScene = load(scenePath)
