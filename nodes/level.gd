@@ -7,7 +7,8 @@ var PlayerArray: Array[Character] = []
 var DeadPlayerArray: Array[Character] = []
 var PlayerIndex: int = 0 # Index of selected character on PlayerArray 
 
-var GoalArray: Array[Goal] = []
+var GreenFlagArray: Array[Goal] = []
+var RedFlagArray: Array[Goal] = []
 var RecoveryCenterArray: Array[Recovery] = []
 
 var camera:LimitCamera= null
@@ -43,7 +44,16 @@ func setup_recovery_centers():
 func setup_goals():
 	for child in get_children():
 		if child is Goal:
-			GoalArray.push_back(child)
+			var goal:Goal = child
+			match goal.Type:
+				Types.GoalType.Green:
+					GreenFlagArray.push_back(goal)
+				Types.GoalType.Red:
+					RedFlagArray.push_back(goal)
+				_:
+					print("unsoported goal type")
+				
+				
 			
 func setup_camera():
 	for child in get_children():
@@ -92,11 +102,23 @@ func swap_character():
 	print("All players are dead")
 	
 func check_goals() -> bool:
-	for goal in GoalArray:
-		#print(goal)
+	return check_green_flags() and check_red_flags()
+	  
+func check_green_flags() -> bool:
+	if GreenFlagArray.size() <= 0:
+		return true
+	for goal in GreenFlagArray:
 		if goal.colliding > 0:
 			return true
 	return false
+	
+func check_red_flags() -> bool:
+	if RedFlagArray.size() <= 0:
+		return true
+	for goal in RedFlagArray:
+		if goal.colliding <= 0:
+			return false
+	return true
 
 func update_camera():
 	camera.position = PlayerArray[PlayerIndex].position

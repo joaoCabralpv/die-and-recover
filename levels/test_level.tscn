@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://bleqpdlrct8jn"]
+[gd_scene load_steps=10 format=4 uid="uid://bleqpdlrct8jn"]
 
 [ext_resource type="Script" path="res://nodes/level.gd" id="1_bi6sy"]
 [ext_resource type="PackedScene" uid="uid://c35ailcsss5dn" path="res://scenes/characters/book/book.tscn" id="2_dyq8a"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dwshkas4lbxd5" path="res://scenes/objects/hazards/spike.tscn" id="7_ehcr1"]
 [ext_resource type="PackedScene" uid="uid://c0ykdd0ajhr5j" path="res://scenes/objects/gizmos/Door/door.tscn" id="8_52ba0"]
 [ext_resource type="PackedScene" uid="uid://kejrkyc0buo5" path="res://scenes/hprc/hprc.tscn" id="8_pd43s"]
+[ext_resource type="PackedScene" uid="uid://bbs2ird15r3ww" path="res://scenes/objects/goals/red_flag.tscn" id="9_2v4ym"]
 
 [node name="Test_level" type="Node2D"]
 script = ExtResource("1_bi6sy")
@@ -32,7 +33,13 @@ position = Vector2(704, 704)
 position = Vector2(55, 682)
 
 [node name="HPRC" parent="." instance=ExtResource("8_pd43s")]
-position = Vector2(909, 641)
+position = Vector2(909, 642)
+
+[node name="Flag" parent="." instance=ExtResource("9_2v4ym")]
+position = Vector2(768, 688)
+
+[node name="Flag2" parent="." instance=ExtResource("9_2v4ym")]
+position = Vector2(1178, 688)
 
 [connection signal="presed" from="Button" to="Door" method="_on_button_presed"]
 [connection signal="released" from="Button" to="Door" method="_on_button_released"]

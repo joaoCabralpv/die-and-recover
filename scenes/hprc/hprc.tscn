@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/hprc/hprc.gd" id="1_ofuc5"]
 [ext_resource type="Texture2D" uid="uid://c73qvmg50ri7i" path="res://assets/sprites/assembled images/HPRC.png" id="1_rqqn5"]
-[ext_resource type="PackedScene" uid="uid://bx71haoa5dk20" path="res://nodes/hprc_keyboard.tscn" id="3_sx7im"]
+[ext_resource type="PackedScene" uid="uid://bx71haoa5dk20" path="res://scenes/hprc_keyboard.tscn" id="3_sx7im"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oufqk"]
 size = Vector2(360, 246)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://dk2kp4vpt6ndn"]
+[gd_scene load_steps=10 format=4 uid="uid://dk2kp4vpt6ndn"]
 
 [ext_resource type="Script" path="res://nodes/level.gd" id="1_8wp5p"]
 [ext_resource type="TileSet" uid="uid://b25atyf7kr17w" path="res://tilemap.tres" id="2_qut76"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://nodes/limit_camera.gd" id="5_545e2"]
 [ext_resource type="PackedScene" uid="uid://qheqe3kbly0i" path="res://scenes/objects/gizmos/Button/Button.tscn" id="6_1287y"]
 [ext_resource type="PackedScene" uid="uid://c0ykdd0ajhr5j" path="res://scenes/objects/gizmos/Door/door.tscn" id="7_pfr0k"]
+[ext_resource type="PackedScene" uid="uid://u1r8ulc5y71b" path="res://scenes/objects/goals/green_flag.tscn" id="8_we6dy"]
+[ext_resource type="PackedScene" uid="uid://bbs2ird15r3ww" path="res://scenes/objects/goals/red_flag.tscn" id="9_gba1i"]
 
 [node name="Test_level" type="Node2D"]
 script = ExtResource("1_8wp5p")
@@ -44,6 +46,15 @@ position = Vector2(557, 690)
 
 [node name="Door" parent="." instance=ExtResource("7_pfr0k")]
 position = Vector2(832, 704)
+
+[node name="Flag" parent="." instance=ExtResource("8_we6dy")]
+position = Vector2(368, 690)
+
+[node name="Flag2" parent="." instance=ExtResource("9_gba1i")]
+position = Vector2(408, 690)
+
+[node name="Flag3" parent="." instance=ExtResource("9_gba1i")]
+position = Vector2(248, 688)
 
 [connection signal="presed" from="Button" to="Door" method="_on_button_presed"]
 [connection signal="released" from="Button" to="Door" method="_on_button_released"]
