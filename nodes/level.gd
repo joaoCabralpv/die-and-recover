@@ -5,7 +5,7 @@ signal change_scene(ScenePath:String)
 
 var PlayerArray: Array[Character] = []
 var DeadPlayerArray: Array[Character] = []
-var PlayerIndex: int = 0 # Index of selected character on PlayerArray 
+var SelectedPlayerIndex: int = 0 # Index of selected character on PlayerArray 
 
 var GreenFlagArray: Array[Goal] = []
 var RedFlagArray: Array[Goal] = []
@@ -77,12 +77,12 @@ func check_typing_hprc() -> bool:
 func swap_character():
 	if check_typing_hprc():
 		return
-	for i in range(PlayerArray.size()): # Finds the next living chracter on the PlayerIndex
-		PlayerArray[PlayerIndex].unselect()
-		PlayerIndex+=1
-		PlayerIndex%=PlayerArray.size() # If the PlayerIndex is bigger than max index alowed by PlayerArray, it goes back to 0
-		if !PlayerArray[PlayerIndex].is_dead: 
-			PlayerArray[PlayerIndex].select()
+	for i in range(PlayerArray.size()): # Finds the next living chracter on the SelectedSelectedPlayerIndex
+		PlayerArray[SelectedPlayerIndex].unselect()
+		SelectedPlayerIndex+=1
+		SelectedPlayerIndex%=PlayerArray.size() # If the SelectedSelectedPlayerIndex is bigger than max index alowed by PlayerArray, it goes back to 0
+		if !PlayerArray[SelectedPlayerIndex].is_dead: 
+			PlayerArray[SelectedPlayerIndex].select()
 			return # Returns from the function if a living character is found
 	print("All players are dead")
 	
@@ -106,7 +106,7 @@ func check_red_flags() -> bool:
 	return true
 
 func update_camera():
-	camera.position = PlayerArray[PlayerIndex].position
+	camera.position = PlayerArray[SelectedPlayerIndex].position
 
 func _process(_delta):
 	if Input.is_action_just_pressed("swap") and PlayerArray.size() > 0:

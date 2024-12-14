@@ -44,7 +44,7 @@ func exit_hprc():
 		character.in_hprc = false 
 
 func _process(_delta):
-	var selected:Character = level.PlayerArray[level.PlayerIndex]
+	var selected:Character = level.PlayerArray[level.SelectedPlayerIndex]
 	if Input.is_action_just_pressed("use_hprc") and selected in PlayerArray and !typingName:
 		hprc_handler()
 	if typingName:
