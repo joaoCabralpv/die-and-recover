@@ -13,7 +13,7 @@ var RecoveryCenterArray: Array[Recovery] = []
 
 var camera:LimitCamera= null
 var has_camera:bool = false
-var NotifierArray: Array[VisibleOnScreenNotifier2D] = []
+#var NotifierArray: Array[VisibleOnScreenNotifier2D] = []
 
 
 # Puts all characters in character array
