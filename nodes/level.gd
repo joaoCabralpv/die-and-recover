@@ -13,8 +13,6 @@ var RecoveryCenterArray: Array[Recovery] = []
 
 var camera:LimitCamera= null
 var has_camera:bool = false
-#var NotifierArray: Array[VisibleOnScreenNotifier2D] = []
-
 
 # Puts all characters in character array
 func select_player():
@@ -75,8 +73,6 @@ func check_typing_hprc() -> bool:
 	return false
 
 func swap_character():
-	if check_typing_hprc():
-		return
 	for i in range(PlayerArray.size()): # Finds the next living chracter on the SelectedSelectedPlayerIndex
 		PlayerArray[SelectedPlayerIndex].unselect()
 		SelectedPlayerIndex+=1
@@ -109,7 +105,7 @@ func update_camera():
 	camera.position = PlayerArray[SelectedPlayerIndex].position
 
 func _process(_delta):
-	if Input.is_action_just_pressed("swap") and PlayerArray.size() > 0:
+	if Input.is_action_just_pressed("swap") and PlayerArray.size() > 0 and !check_typing_hprc():
 		swap_character()
 	if check_goals():
 		UnlockedLevels.unlock_level("2")
