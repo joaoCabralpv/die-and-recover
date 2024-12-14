@@ -10,8 +10,8 @@ var is_dead :bool = false
 var in_hprc :bool = false
 #var velocity :Vector2 = Vector2.ZERO
 
-	
-func move():
+
+func input():
 	if Input.is_action_pressed("right"):
 		velocity.x += walking_speed
 	if Input.is_action_pressed("left"):
@@ -34,7 +34,7 @@ func move():
 			return true
 	return false
 """
-func update():
+func move():
 	velocity.y+=gravity
 	# Caps upwards velocity to jump speed
 	if velocity.y < -jump_speed:
@@ -47,8 +47,8 @@ func extra():
 
 func _process(_delta):
 	if selected and !is_dead and !in_hprc:
-		move()
-	update()
+		input()
+	move()
 	extra()
 
 func select():
