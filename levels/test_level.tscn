@@ -41,5 +41,5 @@ position = Vector2(768, 688)
 [node name="Flag2" parent="." instance=ExtResource("9_2v4ym")]
 position = Vector2(1178, 688)
 
-[connection signal="presed" from="Button" to="Door" method="_on_button_presed"]
-[connection signal="released" from="Button" to="Door" method="_on_button_released"]
+[connection signal="presed" from="Button" to="Door" method="open"]
+[connection signal="released" from="Button" to="Door" method="close"]
