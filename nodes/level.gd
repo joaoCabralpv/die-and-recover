@@ -14,6 +14,8 @@ var RecoveryCenterArray: Array[Recovery] = []
 var camera:LimitCamera= null
 var has_camera:bool = false
 
+@export var unlock_when_completed:String = ""
+
 # Puts all characters in character array
 func select_player():
 	if PlayerArray.size() == 0:
@@ -108,7 +110,7 @@ func _process(_delta):
 	if Input.is_action_just_pressed("swap") and PlayerArray.size() > 0 and !check_typing_hprc():
 		swap_character()
 	if check_goals():
-		UnlockedLevels.unlock_level("2")
+		UnlockedLevels.unlock_level(unlock_when_completed)
 		change_scene.emit("res://scenes/menu/level_menu/level_menu.tscn")
 	if has_camera:
 		update_camera()
