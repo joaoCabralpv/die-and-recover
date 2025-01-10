@@ -7,9 +7,8 @@
 size = Vector2(104, 134.5)
 
 [node name="Book" type="CharacterBody2D"]
-position = Vector2(0, 2)
 scale = Vector2(0.5, 0.5)
-collision_mask = 6
+collision_mask = 7
 velocity = Vector2(0, 120900)
 script = ExtResource("1_4a82b")
 
@@ -17,6 +16,6 @@ script = ExtResource("1_4a82b")
 texture = ExtResource("2_a28o1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 0.250116)
+position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_q1txd")
 one_way_collision_margin = 10.0
