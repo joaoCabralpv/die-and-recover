@@ -19,3 +19,10 @@ func _process(delta):
 		scale.y = clamp(scale.y-(speed*delta),0,1)
 	elif state == State.Close:
 		scale.y = clamp(scale.y+(speed*delta),0,1)
+	if scale.y <= 0.01:
+		$CollisionShape2D.disabled = true
+	else:
+		$CollisionShape2D.disabled = false
+	if name == "Door2":
+		print(scale.y)
+	
