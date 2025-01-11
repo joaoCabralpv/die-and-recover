@@ -37,10 +37,10 @@ position = Vector2(0, 736)
 position = Vector2(3232, 32)
 
 [node name="Book" parent="." instance=ExtResource("3_vaict")]
-position = Vector2(224, 670)
+position = Vector2(366, 670)
 
 [node name="Lyrics Booklet" parent="." instance=ExtResource("3_m4i2b")]
-position = Vector2(408, 670)
+position = Vector2(235, 669)
 
 [node name="Button" parent="." instance=ExtResource("6_1287y")]
 position = Vector2(600, 688)
@@ -49,20 +49,19 @@ position = Vector2(600, 688)
 position = Vector2(832, 704)
 
 [node name="Flag" parent="." instance=ExtResource("8_we6dy")]
-position = Vector2(368, 688)
+position = Vector2(138, 765)
 
 [node name="Flag2" parent="." instance=ExtResource("9_gba1i")]
-position = Vector2(408, 688)
+position = Vector2(161, 767)
 
 [node name="Flag3" parent="." instance=ExtResource("9_gba1i")]
-position = Vector2(240, 688)
+position = Vector2(161, 799)
 
 [node name="Flag4" parent="." instance=ExtResource("8_we6dy")]
-position = Vector2(184, 688)
+position = Vector2(138, 798)
 
 [node name="Box" parent="." instance=ExtResource("10_8uvly")]
-position = Vector2(600, 539)
-collision_mask = 7
+position = Vector2(282, 701)
 
 [node name="Door2" parent="." instance=ExtResource("7_pfr0k")]
 position = Vector2(548, 555)

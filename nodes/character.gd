@@ -11,8 +11,6 @@ var in_hprc :bool = false
 #var velocity :Vector2 = Vector2.ZERO
 var RemoteTransform:RemoteTransform2D = RemoteTransform2D.new()
 
-func _ready():
-	add_child(RemoteTransform)
 
 func input():
 	if Input.is_action_pressed("right"):
@@ -23,8 +21,8 @@ func input():
 		velocity.y -= jump_speed                                       
 #                                                                       
 # This function prevents double jumps(jumping out of a character that is in mid air)
-# when used in the move function here(unused becuse collision between characters is disabled)
-"""func prevent_double_jumps():
+# when used in the move function
+func prevent_double_jumps():
 	#var return_value = false
 	for i in get_slide_collision_count():
 		var colliding = get_slide_collision(i).get_collider()
@@ -36,13 +34,32 @@ func input():
 		else:
 			return true
 	return false
-"""
+
+func move_and_select_collision():
+	var old_mask = self.collision_mask
+	var old_velocity = velocity
+	velocity = Vector2.ZERO
+	move_and_slide()
+	velocity = old_velocity
+	
+	var ingore_collision = true
+	for i in get_slide_collision_count():
+		var collision:KinematicCollision2D = get_slide_collision(i)
+		if not(collision.get_angle() == 0 and (collision.get_collider() is Character or collision.get_collider() is RigidBody2D)):
+			ingore_collision = false
+			break
+	if 	ingore_collision:
+		self.collision_mask = 0
+	move_and_slide()
+	self.collision_mask = old_mask
+
 func move():
 	velocity.y+=gravity
 	# Caps upwards velocity to jump speed
 	if velocity.y < -jump_speed:
 		velocity.y = -jump_speed
 	move_and_slide()
+	#move_and_select_collision()
 	velocity.x = 0
 
 func extra():

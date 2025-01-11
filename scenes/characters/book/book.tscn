@@ -1,14 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://c35ailcsss5dn"]
+[gd_scene load_steps=6 format=3 uid="uid://c35ailcsss5dn"]
 
 [ext_resource type="Script" path="res://scenes/characters/book/book.gd" id="1_4a82b"]
 [ext_resource type="Texture2D" uid="uid://ba2ubyrsdf3r6" path="res://assets/sprites/assembled images/Book.png" id="2_a28o1"]
+[ext_resource type="Script" path="res://nodes/pickup_area.gd" id="3_g0c3s"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1txd"]
 size = Vector2(104, 134.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dv6bm"]
+size = Vector2(120.469, 67.021)
+
 [node name="Book" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
-collision_mask = 7
+collision_mask = 6
 velocity = Vector2(0, 120900)
 script = ExtResource("1_4a82b")
 
@@ -19,3 +23,15 @@ texture = ExtResource("2_a28o1")
 position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_q1txd")
 one_way_collision_margin = 10.0
+
+[node name="PickupArea" type="Area2D" parent="."]
+script = ExtResource("3_g0c3s")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
+position = Vector2(-3.02171, 33.7626)
+shape = SubResource("RectangleShape2D_dv6bm")
+debug_color = Color(0.737255, 0.305882, 0.882353, 0.419608)
+
+[node name="PickedPosition" type="RemoteTransform2D" parent="PickupArea"]
+position = Vector2(58.9766, 0)
+update_scale = false
