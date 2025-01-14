@@ -9,7 +9,6 @@ size = Vector2(360, 246)
 
 [node name="HPRC" type="Node2D"]
 z_index = -1
-position = Vector2(65, 11)
 scale = Vector2(0.5, 0.5)
 script = ExtResource("1_ofuc5")
 

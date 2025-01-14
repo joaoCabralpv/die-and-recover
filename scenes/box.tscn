@@ -1,40 +1,30 @@
-[gd_scene load_steps=7 format=3 uid="uid://y3peg6cg50se"]
+[gd_scene load_steps=6 format=3 uid="uid://y3peg6cg50se"]
 
 [ext_resource type="Script" path="res://nodes/holdable.gd" id="1_pr7dx"]
 [ext_resource type="Texture2D" uid="uid://cxy1qhdftg1rp" path="res://assets/sprites/assembled images/Box.png" id="2_o2cb4"]
 [ext_resource type="Script" path="res://nodes/can_pick_up_area.gd" id="3_177wr"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fasu8"]
-size = Vector2(32.0324, 31.6347)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_283kw"]
-size = Vector2(32.375, 31.5344)
+size = Vector2(32.3132, 31.5344)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsebt"]
-size = Vector2(31.8906, 0.110826)
+size = Vector2(31.9007, 31.7425)
 
 [node name="Box" type="RigidBody2D"]
-collision_layer = 2
-collision_mask = 7
+collision_layer = 3
+collision_mask = 4
+continuous_cd = 1
 script = ExtResource("1_pr7dx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(16, -16)
 texture = ExtResource("2_o2cb4")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(16, -16)
-shape = SubResource("RectangleShape2D_fasu8")
-one_way_collision = true
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_177wr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(16, -16)
 shape = SubResource("RectangleShape2D_283kw")
 debug_color = Color(0.737675, 0.306936, 0.882227, 0.42)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(16.0078, -0.0554129)
 shape = SubResource("RectangleShape2D_dsebt")

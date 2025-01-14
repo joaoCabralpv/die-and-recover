@@ -23,6 +23,3 @@ func _process(delta):
 		$CollisionShape2D.disabled = true
 	else:
 		$CollisionShape2D.disabled = false
-	if name == "Door2":
-		print(scale.y)
-	

@@ -32,7 +32,7 @@ func typing_handler():
 	for player in level.DeadPlayerArray: #Loops trough all dead players
 		# Checks if tyed text is equal to a name of a dead character after removig the spaces
 		if textInput.text.to_lower().replace(" ","") == player.name.to_lower().replace(" ",""): 
-			emit_signal("recover",player) 
+			recover.emit(player)
 			player.position = position # Sets the player position to the hprc
 			exit_hprc()
 
