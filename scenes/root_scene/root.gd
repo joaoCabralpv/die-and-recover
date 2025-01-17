@@ -16,4 +16,3 @@ func change_scene(scenePath:String):
 	#print(new_scene.resource_name)
 	add_child(new_scene.instantiate())
 	get_child(-1).connect("change_scene",change_scene)
-	

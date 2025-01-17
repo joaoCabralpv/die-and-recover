@@ -8,8 +8,6 @@ var gravity = Gravity.gravity
 var selected :bool = false
 var is_dead :bool = false
 var in_hprc :bool = false
-#var velocity :Vector2 = Vector2.ZERO
-var RemoteTransform:RemoteTransform2D = RemoteTransform2D.new()
 
 
 func input():

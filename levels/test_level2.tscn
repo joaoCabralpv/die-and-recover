@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bodiqo4ptrtk5" path="res://scenes/characters/lyrics_booklet/lyrics_booklet.tscn" id="3_m4i2b"]
 [ext_resource type="PackedScene" uid="uid://c35ailcsss5dn" path="res://scenes/characters/book/book.tscn" id="3_vaict"]
 [ext_resource type="Script" path="res://nodes/limit_camera.gd" id="5_545e2"]
-[ext_resource type="PackedScene" uid="uid://qheqe3kbly0i" path="res://levels/Button.tscn" id="6_1287y"]
+[ext_resource type="PackedScene" uid="uid://qheqe3kbly0i" path="res://scenes/objects/gizmos/Button/Button.tscn" id="6_1287y"]
 [ext_resource type="PackedScene" uid="uid://c0ykdd0ajhr5j" path="res://scenes/objects/gizmos/Door/door.tscn" id="7_pfr0k"]
 [ext_resource type="PackedScene" uid="uid://u1r8ulc5y71b" path="res://scenes/objects/goals/green_flag.tscn" id="8_we6dy"]
 [ext_resource type="PackedScene" uid="uid://bbs2ird15r3ww" path="res://scenes/objects/goals/red_flag.tscn" id="9_gba1i"]

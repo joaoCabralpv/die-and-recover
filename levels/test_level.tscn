@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c35ailcsss5dn" path="res://scenes/characters/book/book.tscn" id="2_dyq8a"]
 [ext_resource type="PackedScene" uid="uid://bodiqo4ptrtk5" path="res://scenes/characters/lyrics_booklet/lyrics_booklet.tscn" id="3_or58x"]
 [ext_resource type="TileSet" uid="uid://b25atyf7kr17w" path="res://tilemap.tres" id="6_ya4xu"]
-[ext_resource type="PackedScene" uid="uid://qheqe3kbly0i" path="res://levels/Button.tscn" id="7_3axm8"]
+[ext_resource type="PackedScene" uid="uid://qheqe3kbly0i" path="res://scenes/objects/gizmos/Button/Button.tscn" id="7_3axm8"]
 [ext_resource type="PackedScene" uid="uid://dwshkas4lbxd5" path="res://scenes/objects/hazards/spike.tscn" id="7_ehcr1"]
 [ext_resource type="PackedScene" uid="uid://c0ykdd0ajhr5j" path="res://scenes/objects/gizmos/Door/door.tscn" id="8_52ba0"]
 [ext_resource type="PackedScene" uid="uid://kejrkyc0buo5" path="res://scenes/hprc/hprc.tscn" id="8_pd43s"]
