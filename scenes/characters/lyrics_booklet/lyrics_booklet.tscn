@@ -10,11 +10,12 @@ size = Vector2(103.975, 135.084)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7y15d"]
 size = Vector2(120.469, 67.021)
 
-[node name="Lyrics_Bookelt" type="CharacterBody2D"]
+[node name="Lyrics Booklet" type="CharacterBody2D"]
 scale = Vector2(0.5, 0.5)
 collision_layer = 3
 collision_mask = 4
 velocity = Vector2(0, 120900)
+safe_margin = 0.405
 script = ExtResource("1_0qwgy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

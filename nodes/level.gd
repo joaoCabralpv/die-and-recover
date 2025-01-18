@@ -14,6 +14,10 @@ var RecoveryCenterArray: Array[Recovery] = []
 var camera:LimitCamera= null
 var has_camera:bool = false
 
+@onready var pause_menu = preload("res://scenes/menu/pause_menu/pause_menu.tscn").instantiate()
+var is_paused:bool = false
+
+
 @export var unlock_when_completed:String = ""
 
 # Puts all characters in character array
@@ -51,9 +55,13 @@ func setup_objects():
 			has_camera = true
 			
 
+
+
 func _ready():
 	setup_objects()
 	select_player()
+	pause_menu.Continue.connect(continue_game)
+	pause_menu.MainMenu.connect(main_menu)
 	
 
 func _kill_player(object):
@@ -88,7 +96,7 @@ func check_goals() -> bool:
 	return check_green_flags() and check_red_flags()
 	  
 func check_green_flags() -> bool:
-	if GreenFlagArray.size() <= 0:
+	if GreenFlagArray.size() == 0:
 		return true
 	for goal in GreenFlagArray:
 		if goal.colliding > 0:
@@ -96,15 +104,22 @@ func check_green_flags() -> bool:
 	return false
 	
 func check_red_flags() -> bool:
-	if RedFlagArray.size() <= 0:
+	if RedFlagArray.size() == 0:
 		return true
 	for goal in RedFlagArray:
-		if goal.colliding <= 0:
+		if goal.colliding == 0:
 			return false
 	return true
 
 func update_camera():
 	camera.position = PlayerArray[SelectedPlayerIndex].position
+	
+func continue_game():
+	is_paused = false
+	remove_child(pause_menu)
+func main_menu():
+	change_scene.emit("res://scenes/menu/main_menu/main_menu.tscn")
+
 
 func _process(_delta):
 	if Input.is_action_just_pressed("swap") and PlayerArray.size() > 0 and !check_typing_hprc():
@@ -112,5 +127,17 @@ func _process(_delta):
 	if check_goals():
 		UnlockedLevels.unlock_level(unlock_when_completed)
 		change_scene.emit("res://scenes/menu/level_menu/level_menu.tscn")
+		
+	if Input.is_action_just_pressed("pause") and !is_paused:
+		is_paused = true
+		var pause:bool = true
+		for center in RecoveryCenterArray:
+			if center.typingName:
+				pause = false
+				break
+		if pause:
+			add_child(pause_menu)
+			#get_tree().paused = true
+			
 	if has_camera:
 		update_camera()

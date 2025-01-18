@@ -87,8 +87,10 @@ func kill():
 	visible = false
 	
 func recover():
+	print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\n\n\n\nn\n\nnnnnn")
 	is_dead = false
 	for child in get_children():
 		if child is CollisionPolygon2D or child is CollisionShape2D:
 			child.set_deferred("disabled",false)
 	visible = true
+	velocity = Vector2.ZERO
