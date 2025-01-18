@@ -1,4 +1,4 @@
-extends Control
+extends Node
 
 signal change_scene(Path:String)
 
