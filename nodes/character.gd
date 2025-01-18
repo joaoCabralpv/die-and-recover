@@ -1,8 +1,8 @@
 extends CharacterBody2D
 class_name Character
 
-@export var walking_speed = 300
-@export var jump_speed = 500
+@export var walking_speed = 600
+@export var jump_speed = 1000
 var gravity = Gravity.gravity
 
 var selected :bool = false
@@ -87,7 +87,6 @@ func kill():
 	visible = false
 	
 func recover():
-	print("\n\n\n\n\n\n\n\n\n\n\n\n\n\nn\n\n\n\nn\n\nnnnnn")
 	is_dead = false
 	for child in get_children():
 		if child is CollisionPolygon2D or child is CollisionShape2D:

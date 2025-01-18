@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bx71haoa5dk20"]
 
-[ext_resource type="Texture2D" uid="uid://cqy1wiuld6cpg" path="res://assets/sprites/assembled images/HPRCKeyboard.png" id="1_2chje"]
+[ext_resource type="Texture2D" uid="uid://cqy1wiuld6cpg" path="res://assets/bfdi_assets/assembled images/HPRCKeyboard.png" id="1_45467"]
 [ext_resource type="FontFile" uid="uid://g4vd0nt1gof2" path="res://assets/fonts/11524_DigifaceRegular.ttf" id="2_qbkau"]
 
 [sub_resource type="Theme" id="Theme_766u7"]
@@ -13,8 +13,8 @@ LineEdit/font_sizes/font_size = 110
 
 [node name="HPRCKeyboard" type="Sprite2D"]
 z_index = 99
-scale = Vector2(0.105, 0.105)
-texture = ExtResource("1_2chje")
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_45467")
 
 [node name="LineEdit" type="LineEdit" parent="."]
 anchors_preset = -1

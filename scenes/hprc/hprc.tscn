@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://kejrkyc0buo5"]
 
 [ext_resource type="Script" path="res://scenes/hprc/hprc.gd" id="1_ofuc5"]
-[ext_resource type="Texture2D" uid="uid://c73qvmg50ri7i" path="res://assets/sprites/assembled images/HPRC.png" id="1_rqqn5"]
+[ext_resource type="Texture2D" uid="uid://c73qvmg50ri7i" path="res://assets/bfdi_assets/assembled images/HPRC.png" id="2_42gol"]
 [ext_resource type="PackedScene" uid="uid://bx71haoa5dk20" path="res://scenes/hprc/hprckeyboard/hprc_keyboard.tscn" id="3_sx7im"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oufqk"]
-size = Vector2(360, 246)
+size = Vector2(726, 500)
 
 [node name="HPRC" type="Node2D"]
 z_index = -1
@@ -17,17 +17,16 @@ collision_layer = 4
 
 [node name="Sprite2D" type="Sprite2D" parent="Area2D"]
 position = Vector2(-4.54747e-13, 0)
-scale = Vector2(0.15, 0.15)
-texture = ExtResource("1_rqqn5")
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_42gol")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0, 1)
+position = Vector2(1, 2)
 shape = SubResource("RectangleShape2D_oufqk")
 
 [node name="HPRCKeyboard" parent="." instance=ExtResource("3_sx7im")]
 visible = false
-position = Vector2(-7.62939e-06, -320)
-scale = Vector2(0.490888, 0.502373)
+position = Vector2(0, -420)
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

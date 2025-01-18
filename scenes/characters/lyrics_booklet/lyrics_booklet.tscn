@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bodiqo4ptrtk5"]
 
 [ext_resource type="Script" path="res://scenes/characters/lyrics_booklet/lyrics_booklet.gd" id="1_0qwgy"]
-[ext_resource type="Texture2D" uid="uid://b0vsfm2cpkhi0" path="res://assets/sprites/assembled images/LyricsBooklet.png" id="1_cuvs8"]
+[ext_resource type="Texture2D" uid="uid://b0vsfm2cpkhi0" path="res://assets/bfdi_assets/assembled images/LyricsBooklet.png" id="2_6n87i"]
 [ext_resource type="Script" path="res://nodes/pickup_area.gd" id="3_st1b3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1txd"]
@@ -11,7 +11,6 @@ size = Vector2(103.975, 135.084)
 size = Vector2(120.469, 67.021)
 
 [node name="Lyrics Booklet" type="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
 collision_layer = 3
 collision_mask = 4
 velocity = Vector2(0, 120900)
@@ -19,7 +18,7 @@ safe_margin = 0.405
 script = ExtResource("1_0qwgy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_cuvs8")
+texture = ExtResource("2_6n87i")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-2.01617, 0)

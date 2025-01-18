@@ -115,6 +115,7 @@ func update_camera():
 	camera.position = PlayerArray[SelectedPlayerIndex].position
 	
 func continue_game():
+	print("continue")
 	is_paused = false
 	remove_child(pause_menu)
 func main_menu():
@@ -127,17 +128,18 @@ func _process(_delta):
 	if check_goals():
 		UnlockedLevels.unlock_level(unlock_when_completed)
 		change_scene.emit("res://scenes/menu/level_menu/level_menu.tscn")
-		
-	if Input.is_action_just_pressed("pause") and !is_paused:
-		is_paused = true
-		var pause:bool = true
-		for center in RecoveryCenterArray:
-			if center.typingName:
-				pause = false
-				break
-		if pause:
-			add_child(pause_menu)
-			#get_tree().paused = true
+	
+	if Input.is_action_just_pressed("pause"):
+		if !is_paused:
+			var pause:bool = true
+			for center in RecoveryCenterArray:
+				if center.typingName:
+					pause = false
+					break
+			if pause:
+				is_paused = true
+				add_child(pause_menu)
+				#get_tree().paused = true
 			
 	if has_camera:
 		update_camera()

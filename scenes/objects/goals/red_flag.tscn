@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbs2ird15r3ww"]
 
 [ext_resource type="Script" path="res://nodes/goal.gd" id="1_cn48u"]
-[ext_resource type="Texture2D" uid="uid://hj5bnlktmsox" path="res://assets/objects/RedFlag.png" id="2_mlu1u"]
+[ext_resource type="Texture2D" uid="uid://hj5bnlktmsox" path="res://assets/new_assets/RedFlag.png" id="2_kjknw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_npfio"]
-size = Vector2(16, 32)
+size = Vector2(33, 64)
 
 [node name="Flag" type="Area2D"]
 collision_layer = 4
@@ -13,11 +13,11 @@ script = ExtResource("1_cn48u")
 Type = 1
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(3, 0)
+position = Vector2(6.5, 0)
 shape = SubResource("RectangleShape2D_npfio")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_mlu1u")
+texture = ExtResource("2_kjknw")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]

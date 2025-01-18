@@ -1,17 +1,17 @@
 [gd_scene load_steps=3 format=3 uid="uid://dwshkas4lbxd5"]
 
 [ext_resource type="Script" path="res://nodes/kill_area.gd" id="1_n62v4"]
-[ext_resource type="Texture2D" uid="uid://cbijw6rrods00" path="res://assets/sprites/assembled images/Spike.png" id="2_tcl6i"]
+[ext_resource type="Texture2D" uid="uid://cbijw6rrods00" path="res://assets/bfdi_assets/assembled images/Spike.png" id="2_dao4u"]
 
 [node name="Spike" type="Area2D"]
 z_index = -1
-scale = Vector2(0.05, 0.05)
+scale = Vector2(0.1, 0.1)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_n62v4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_tcl6i")
+texture = ExtResource("2_dao4u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(-132, -170, -62, -206, 20, -400, 80, -200, 149, -153, 363, -180, 214, -31, 210, 51, 343, 226, 133, 170, 61, 207, -19, 400, -74, 203, -149, 154, -362, 181, -211, 28, -207, -49, -342, -227)

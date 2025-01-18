@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://y3peg6cg50se"]
 
 [ext_resource type="Script" path="res://nodes/holdable.gd" id="1_pr7dx"]
-[ext_resource type="Texture2D" uid="uid://cxy1qhdftg1rp" path="res://assets/sprites/assembled images/Box.png" id="2_o2cb4"]
+[ext_resource type="Texture2D" uid="uid://c6357m66gdl2f" path="res://assets/bfdi_assets/assembled images/Box.png" id="2_sgdkh"]
 [ext_resource type="Script" path="res://nodes/can_pick_up_area.gd" id="3_177wr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_283kw"]
-size = Vector2(32.3132, 31.5344)
+size = Vector2(64, 64)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dsebt"]
-size = Vector2(31.9007, 31.7425)
+size = Vector2(64.0295, 63.9948)
 
 [node name="Box" type="RigidBody2D"]
 collision_layer = 3
@@ -17,12 +17,13 @@ continuous_cd = 1
 script = ExtResource("1_pr7dx")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_o2cb4")
+texture = ExtResource("2_sgdkh")
 
 [node name="Area2D" type="Area2D" parent="."]
 script = ExtResource("3_177wr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -9.53674e-07)
 shape = SubResource("RectangleShape2D_283kw")
 debug_color = Color(0.737675, 0.306936, 0.882227, 0.42)
 
