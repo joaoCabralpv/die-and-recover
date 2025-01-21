@@ -1,7 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://dwshkas4lbxd5"]
+[gd_scene load_steps=4 format=3 uid="uid://dwshkas4lbxd5"]
 
 [ext_resource type="Script" path="res://nodes/kill_area.gd" id="1_n62v4"]
 [ext_resource type="Texture2D" uid="uid://cbijw6rrods00" path="res://assets/bfdi_assets/assembled images/Spike.png" id="2_dao4u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vesiw"]
+radius = 396.232
 
 [node name="Spike" type="Area2D"]
 z_index = -1
@@ -13,5 +16,5 @@ script = ExtResource("1_n62v4")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_dao4u")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-132, -170, -62, -206, 20, -400, 80, -200, 149, -153, 363, -180, 214, -31, 210, 51, 343, 226, 133, 170, 61, 207, -19, 400, -74, 203, -149, 154, -362, 181, -211, 28, -207, -49, -342, -227)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vesiw")

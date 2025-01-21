@@ -8,7 +8,7 @@
 size = Vector2(116, 132)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jgpeg"]
-size = Vector2(134, 60)
+size = Vector2(132, 60)
 
 [node name="Firey" type="CharacterBody2D"]
 collision_layer = 3
@@ -29,6 +29,6 @@ script = ExtResource("3_rwt0e")
 position = Vector2(71, 17)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickupArea"]
-position = Vector2(-1, 47)
+position = Vector2(0, 47)
 shape = SubResource("RectangleShape2D_jgpeg")
 debug_color = Color(0.737255, 0.305882, 0.882353, 0.419608)

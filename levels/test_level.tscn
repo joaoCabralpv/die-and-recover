@@ -31,7 +31,7 @@ position = Vector2(421, 991)
 position = Vector2(768, 1024)
 
 [node name="Spike" parent="." instance=ExtResource("7_ehcr1")]
-position = Vector2(102, 941)
+position = Vector2(105, 981)
 
 [node name="HPRC" parent="." instance=ExtResource("8_pd43s")]
 position = Vector2(1246, 897)
