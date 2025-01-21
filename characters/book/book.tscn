@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://c35ailcsss5dn"]
 
-[ext_resource type="Script" path="res://scenes/characters/book/book.gd" id="1_4a82b"]
+[ext_resource type="Script" path="res://characters/book/book.gd" id="1_4a82b"]
 [ext_resource type="Texture2D" uid="uid://ba2ubyrsdf3r6" path="res://assets/bfdi_assets/assembled images/Book.png" id="2_5q4xy"]
 [ext_resource type="Script" path="res://nodes/pickup_area.gd" id="3_g0c3s"]
 

@@ -2,14 +2,14 @@
 
 [ext_resource type="Script" path="res://nodes/level.gd" id="1_8wp5p"]
 [ext_resource type="TileSet" uid="uid://cwyj3jt3fo1u8" path="res://tileset.tres" id="2_3krke"]
-[ext_resource type="PackedScene" uid="uid://bodiqo4ptrtk5" path="res://scenes/characters/lyrics_booklet/lyrics_booklet.tscn" id="3_m4i2b"]
-[ext_resource type="PackedScene" uid="uid://c35ailcsss5dn" path="res://scenes/characters/book/book.tscn" id="3_vaict"]
+[ext_resource type="PackedScene" uid="uid://c35ailcsss5dn" path="res://characters/book/book.tscn" id="3_vaict"]
 [ext_resource type="Script" path="res://nodes/limit_camera.gd" id="5_545e2"]
 [ext_resource type="PackedScene" uid="uid://qheqe3kbly0i" path="res://scenes/objects/gizmos/Button/Button.tscn" id="6_1287y"]
 [ext_resource type="PackedScene" uid="uid://c0ykdd0ajhr5j" path="res://scenes/objects/gizmos/Door/door.tscn" id="7_pfr0k"]
 [ext_resource type="PackedScene" uid="uid://u1r8ulc5y71b" path="res://scenes/objects/goals/green_flag.tscn" id="8_we6dy"]
 [ext_resource type="PackedScene" uid="uid://bbs2ird15r3ww" path="res://scenes/objects/goals/red_flag.tscn" id="9_gba1i"]
 [ext_resource type="PackedScene" uid="uid://y3peg6cg50se" path="res://scenes/box.tscn" id="10_8uvly"]
+[ext_resource type="PackedScene" uid="uid://cd61ww1fss6ce" path="res://characters/firey/firey.tscn" id="10_31wfc"]
 
 [node name="Test_level" type="Node2D"]
 script = ExtResource("1_8wp5p")
@@ -39,9 +39,6 @@ position = Vector2(3232, 32)
 [node name="Book" parent="." instance=ExtResource("3_vaict")]
 position = Vector2(312, 958)
 
-[node name="Lyrics Booklet" parent="." instance=ExtResource("3_m4i2b")]
-position = Vector2(163, 956)
-
 [node name="Button" parent="." instance=ExtResource("6_1287y")]
 position = Vector2(605, 991)
 
@@ -70,6 +67,9 @@ rotation = 1.5708
 
 [node name="Button2" parent="." instance=ExtResource("6_1287y")]
 position = Vector2(504, 991)
+
+[node name="Firey" parent="." instance=ExtResource("10_31wfc")]
+position = Vector2(162, 944)
 
 [connection signal="pressed" from="Button" to="Door" method="open"]
 [connection signal="released" from="Button" to="Door" method="close"]

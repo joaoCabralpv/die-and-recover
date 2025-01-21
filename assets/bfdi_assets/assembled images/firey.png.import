@@ -2,12 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4wdpv4efqs3t"
-valid=false
+uid="uid://dci8v6a6byfjl"
+path="res://.godot/imported/firey.png-9c49b8da111afe1b113d359a5e174817.ctex"
+metadata={
+"vram_texture": false
+}
 
 [deps]
 
-source_file="res://assets/bfdi_assets/base images/bodies/Book.png"
+source_file="res://assets/bfdi_assets/assembled images/firey.png"
+dest_files=["res://.godot/imported/firey.png-9c49b8da111afe1b113d359a5e174817.ctex"]
 
 [params]
 
