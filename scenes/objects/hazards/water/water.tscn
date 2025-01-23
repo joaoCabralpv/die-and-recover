@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi6xwvisblgxd"]
+
+[ext_resource type="Script" path="res://scenes/objects/hazards/water/water.gd" id="1_a3pme"]
+[ext_resource type="Texture2D" uid="uid://dptr5ovenrq0i" path="res://assets/new_assets/Water.png" id="2_m2hkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yxfr2"]
+size = Vector2(64, 64)
+
+[node name="Water" type="Area2D"]
+script = ExtResource("1_a3pme")
+
+[node name="Water" type="Sprite2D" parent="."]
+texture = ExtResource("2_m2hkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_yxfr2")

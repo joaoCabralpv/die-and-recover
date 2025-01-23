@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dwshkas4lbxd5"]
 
-[ext_resource type="Script" path="res://nodes/kill_area.gd" id="1_n62v4"]
-[ext_resource type="Texture2D" uid="uid://cbijw6rrods00" path="res://assets/bfdi_assets/assembled images/Spike.png" id="2_dao4u"]
+[ext_resource type="Script" path="res://scenes/objects/hazards/spike/spike.gd" id="1_oi55b"]
+[ext_resource type="Texture2D" uid="uid://cbijw6rrods00" path="res://assets/bfdi_assets/assembled images/Spike.png" id="2_lyoxt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vesiw"]
 radius = 396.232
@@ -11,10 +11,10 @@ z_index = -1
 scale = Vector2(0.1, 0.1)
 collision_layer = 4
 collision_mask = 3
-script = ExtResource("1_n62v4")
+script = ExtResource("1_oi55b")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_dao4u")
+texture = ExtResource("2_lyoxt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vesiw")
