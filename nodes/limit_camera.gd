@@ -1,4 +1,4 @@
-#@tool
+@tool
 extends Camera2D
 class_name LimitCamera
 
@@ -18,15 +18,15 @@ func _ready():
 	limit_left = leftNode.position.x
 	limit_right = rightNode.position.x
 
-"""
 func _process(_delta):
 	if Engine.is_editor_hint():
-		print("1")
-		_get_configuration_warning()
 		update_configuration_warnings()
+		var editor_settings:EditorSettings = EditorInterface.get_editor_settings()
+		#var view2d: SubViewport = editor_settings.get_editor_viewport_2d()
+		#var sprite:Sprite2D = load("res://test.tscn").instantiate()
+		#MainScreen.add_child(load("res://test.tscn").instantiate())
 
-func _get_configuration_warning() -> Array[String]:
-
+func _get_configuration_warnings() -> PackedStringArray:
 	var top:bool = false
 	var bottom:bool = false
 	var left:bool = false
@@ -50,8 +50,8 @@ func _get_configuration_warning() -> Array[String]:
 				if left:
 					WarnigStringArray.push_back("Has two nodes named \"left\"")
 				left = true
-		
-			if child.name.to_lower() == "rignt":
+				
+			if child.name.to_lower() == "right":
 				if right:
 					WarnigStringArray.push_back("Has two nodes named \"right\"")
 				right = true
@@ -65,6 +65,4 @@ func _get_configuration_warning() -> Array[String]:
 	if !right:
 		WarnigStringArray.push_back("Has no node named right")
 	
-	return ["1"]
-
-"""
+	return WarnigStringArray

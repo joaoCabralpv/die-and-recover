@@ -41,9 +41,6 @@ func setup_objects():
 	for child in get_children():
 		if child is Character:
 			PlayerArray.push_back(child)
-		elif child is KillArea:
-			var kill_area:KillArea = child
-			kill_area.body_entered.connect(_kill_player)
 		elif child is Recovery:
 			var recovery_center:Recovery = child
 			recovery_center.recover.connect(_recover_player)
@@ -64,12 +61,11 @@ func _ready():
 	pause_menu.MainMenu.connect(main_menu)
 	
 
-func _kill_player(object):
-	if object is Character:
-		object.kill()
-		DeadPlayerArray.push_back(object)
-		if DeadPlayerArray.size() == PlayerArray.size():
-			print("All players are dead")
+func kill_player(player:Character):
+	player.kill()
+	DeadPlayerArray.push_back(player)
+	if DeadPlayerArray.size() == PlayerArray.size():
+		print("All players are dead")
 
 func _recover_player(player:Character):
 	player.recover()
