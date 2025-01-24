@@ -1,23 +1,17 @@
 extends StaticBody2D
-
 class_name Door
 
-enum State{Open,Close}
-var state:State = State.Close
+var state:Types.DoorState = Types.DoorState.Close
 
 @export var speed = 3
 
-func open():
-	state=State.Open
-			
-func close():
-	state=State.Close
-
+func change_state(new_state:Types.DoorState):
+	state = new_state
 
 func _process(delta):
-	if state == State.Open:
+	if state == Types.DoorState.Open:
 		scale.y = clamp(scale.y-(speed*delta),0,1)
-	elif state == State.Close:
+	elif state == Types.DoorState.Close:
 		scale.y = clamp(scale.y+(speed*delta),0,1)
 	if scale.y <= 0.01:
 		$CollisionShape2D.disabled = true

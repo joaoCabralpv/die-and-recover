@@ -7,7 +7,6 @@ var bottomNode:Node2D = null
 var leftNode:Node2D = null
 var rightNode:Node2D = null
 
-
 func _ready():
 	topNode = get_node("top")
 	bottomNode = get_node("bottom")
@@ -20,8 +19,7 @@ func _ready():
 
 func _process(_delta):
 	if Engine.is_editor_hint():
-		update_configuration_warnings()
-		var editor_settings:EditorSettings = EditorInterface.get_editor_settings()
+		pass
 		#var view2d: SubViewport = editor_settings.get_editor_viewport_2d()
 		#var sprite:Sprite2D = load("res://test.tscn").instantiate()
 		#MainScreen.add_child(load("res://test.tscn").instantiate())
