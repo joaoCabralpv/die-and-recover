@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bodiqo4ptrtk5"]
 
-[ext_resource type="Script" path="res://characters/lyrics_booklet/lyrics_booklet.gd" id="1_0qwgy"]
+[ext_resource type="Script" uid="uid://b1vwqpkuo1j2e" path="res://characters/lyrics_booklet/lyrics_booklet.gd" id="1_0qwgy"]
 [ext_resource type="Texture2D" uid="uid://b0vsfm2cpkhi0" path="res://assets/bfdi_assets/assembled images/LyricsBooklet.png" id="2_6n87i"]
-[ext_resource type="Script" path="res://nodes/pickup_area.gd" id="3_st1b3"]
+[ext_resource type="Script" uid="uid://n8bxjglktdvm" path="res://nodes/pickup_area.gd" id="3_st1b3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q1txd"]
 size = Vector2(103.975, 135.084)
@@ -32,6 +32,6 @@ position = Vector2(-3.02171, 33.7626)
 shape = SubResource("RectangleShape2D_7y15d")
 debug_color = Color(0.737255, 0.305882, 0.882353, 0.419608)
 
-[node name="RemoteTransform2D" type="RemoteTransform2D" parent="PickupArea"]
+[node name="HoldingPosition" type="RemoteTransform2D" parent="PickupArea"]
 position = Vector2(66, 0)
 update_scale = false

@@ -15,7 +15,13 @@ var on_spring:bool = true
 var just_entered_spring:bool = false
 var jump_with_spring:bool = false
 
+var direction = 1
+
 func input():
+	if Input.is_action_just_pressed("right"):
+		direction = 1
+	if Input.is_action_just_pressed("left"):
+		direction = -1
 	if Input.is_action_pressed("right"):
 		velocity.x += walking_speed
 	if Input.is_action_pressed("left"):
@@ -23,7 +29,8 @@ func input():
 	if Input.is_action_just_pressed("jump") and (is_on_floor()or on_spring):
 		on_spring = false
 		velocity.y -= jump_speed     
-					   
+	scale.x = scale.y * direction
+
 func move():
 	velocity.y+=gravity
 	if just_entered_spring:
@@ -35,12 +42,12 @@ func move():
 	if velocity.y < -jump_speed-spring_jumping_speed:
 		velocity.y = -jump_speed-spring_jumping_speed
 	move_and_slide()
-	velocity.x = 0
-
+	
 func extra():
 	return
 
 func _process(_delta):
+	velocity.x = 0
 	if selected and !is_dead and !in_hprc:
 		input()
 	move()

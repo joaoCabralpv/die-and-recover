@@ -22,7 +22,7 @@ tile_set = ExtResource("2_3krke")
 limit_left = 0
 limit_top = 0
 limit_right = 3232
-limit_bottom = 736
+limit_bottom = 1056
 position_smoothing_enabled = true
 script = ExtResource("5_545e2")
 
@@ -59,7 +59,6 @@ position = Vector2(215, 992)
 
 [node name="Box" parent="." instance=ExtResource("10_8uvly")]
 position = Vector2(613, 605)
-lock_rotation = true
 
 [node name="Door2" parent="." instance=ExtResource("7_pfr0k")]
 position = Vector2(522, 637)
@@ -71,7 +70,5 @@ position = Vector2(504, 991)
 [node name="Firey" parent="." instance=ExtResource("10_31wfc")]
 position = Vector2(162, 944)
 
-[connection signal="pressed" from="Button" to="Door" method="open"]
-[connection signal="released" from="Button" to="Door" method="close"]
-[connection signal="pressed" from="Button2" to="Door2" method="open"]
-[connection signal="released" from="Button2" to="Door2" method="close"]
+[connection signal="change_state" from="Button" to="Door2" method="change_state"]
+[connection signal="change_state" from="Button2" to="Door" method="change_state"]

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c0ykdd0ajhr5j" path="res://scenes/objects/gizmos/Door/door.tscn" id="6_6etlu"]
 [ext_resource type="PackedScene" uid="uid://qheqe3kbly0i" path="res://scenes/objects/gizmos/Button/Button.tscn" id="7_s6qok"]
 [ext_resource type="PackedScene" uid="uid://bbs2ird15r3ww" path="res://scenes/objects/goals/red_flag.tscn" id="8_4siuv"]
-[ext_resource type="PackedScene" uid="uid://dwshkas4lbxd5" path="res://scenes/objects/hazards/spike.tscn" id="9_lx16e"]
+[ext_resource type="PackedScene" uid="uid://dwshkas4lbxd5" path="res://scenes/objects/hazards/spike/spike.tscn" id="9_lx16e"]
 [ext_resource type="PackedScene" uid="uid://y3peg6cg50se" path="res://scenes/box.tscn" id="10_yhvp4"]
 
 [node name="Level3" type="Node2D"]
@@ -51,9 +51,6 @@ position = Vector2(565, 543)
 [node name="Box" parent="." instance=ExtResource("10_yhvp4")]
 position = Vector2(1203, 992)
 
-[connection signal="pressed" from="Button" to="Door" method="open"]
-[connection signal="pressed" from="Button" to="Door2" method="open"]
-[connection signal="released" from="Button" to="Door" method="close"]
-[connection signal="released" from="Button" to="Door2" method="close"]
-[connection signal="pressed" from="Button2" to="Door" method="open"]
-[connection signal="released" from="Button2" to="Door" method="close"]
+[connection signal="change_state" from="Button" to="Door" method="change_state"]
+[connection signal="change_state" from="Button" to="Door2" method="change_state"]
+[connection signal="change_state" from="Button2" to="Door2" method="change_state"]

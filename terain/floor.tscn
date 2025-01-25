@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://5121j2m13v1j"]
+
+[ext_resource type="Texture2D" uid="uid://wnlba8ynrw4c" path="res://assets/tlies/ground.png" id="1_x72ll"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d07uj"]
+size = Vector2(64, 64)
+
+[node name="Floor" type="StaticBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_x72ll")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_d07uj")

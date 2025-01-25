@@ -52,8 +52,6 @@ func setup_objects():
 			has_camera = true
 			
 
-
-
 func _ready():
 	setup_objects()
 	select_player()
