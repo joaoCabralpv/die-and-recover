@@ -1,36 +1,52 @@
-[gd_scene load_steps=7 format=4 uid="uid://bd8d8d0rlssk3"]
+[gd_scene load_steps=12 format=4 uid="uid://bd8d8d0rlssk3"]
 
 [ext_resource type="PackedScene" uid="uid://c35ailcsss5dn" path="res://characters/book/book.tscn" id="1_kdiel"]
 [ext_resource type="Script" uid="uid://bnfcldlblj4io" path="res://nodes/level.gd" id="1_opx3w"]
-[ext_resource type="PackedScene" uid="uid://y3peg6cg50se" path="res://scenes/box.tscn" id="2_72g25"]
+[ext_resource type="PackedScene" uid="uid://y3peg6cg50se" path="res://objects/box.tscn" id="2_72g25"]
 [ext_resource type="TileSet" uid="uid://cwyj3jt3fo1u8" path="res://tileset.tres" id="4_tt1th"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_22qf6"]
-size = Vector2(717, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_4hj0x"]
-size = Vector2(49, 359)
+[ext_resource type="PackedScene" uid="uid://cd61ww1fss6ce" path="res://characters/firey/firey.tscn" id="5_1y5xd"]
+[ext_resource type="PackedScene" uid="uid://kejrkyc0buo5" path="res://objects/hprc/hprc.tscn" id="6_g5mgy"]
+[ext_resource type="PackedScene" uid="uid://dwshkas4lbxd5" path="res://objects/hazards/spike/spike.tscn" id="7_8vr3t"]
+[ext_resource type="PackedScene" uid="uid://bbs2ird15r3ww" path="res://objects/goals/red_flag.tscn" id="8_a58qw"]
+[ext_resource type="PackedScene" uid="uid://qheqe3kbly0i" path="res://Button/Button.tscn" id="9_ij65d"]
+[ext_resource type="PackedScene" uid="uid://c0ykdd0ajhr5j" path="res://objects/Door/door.tscn" id="10_gci8k"]
+[ext_resource type="PackedScene" uid="uid://c0nm5jey6x4tm" path="res://objects/Spring/Spring.tscn" id="11_a58qw"]
 
 [node name="Level5" type="Node2D"]
 script = ExtResource("1_opx3w")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 255
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(522, 463)
-shape = SubResource("RectangleShape2D_22qf6")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(855, 274)
-shape = SubResource("RectangleShape2D_4hj0x")
+[node name="Spring" parent="." instance=ExtResource("11_a58qw")]
+position = Vector2(293, 1004)
 
 [node name="Book" parent="." instance=ExtResource("1_kdiel")]
-position = Vector2(328, 381)
+position = Vector2(151, 953)
 
 [node name="Box" parent="." instance=ExtResource("2_72g25")]
-position = Vector2(541, 420)
+position = Vector2(1424, 416)
+
+[node name="Firey" parent="." instance=ExtResource("5_1y5xd")]
+position = Vector2(520, 944)
+
+[node name="HPRC" parent="." instance=ExtResource("6_g5mgy")]
+position = Vector2(1552, 328)
+
+[node name="Spike" parent="." instance=ExtResource("7_8vr3t")]
+position = Vector2(1136, 768)
+
+[node name="Flag" parent="." instance=ExtResource("8_a58qw")]
+position = Vector2(856, 992)
+
+[node name="Flag2" parent="." instance=ExtResource("8_a58qw")]
+position = Vector2(1816, 424)
+
+[node name="Button" parent="." instance=ExtResource("9_ij65d")]
+position = Vector2(992, 992)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAALAAEAAQAAAAAAAAALAAIAAQAAAAAAAAALAAMAAQAAAAAAAAALAAQAAQAAAAAAAAAKAAUAAQAAAAAAAAAKAAYAAQAAAAAAAAALAAYAAQAAAAAAAAALAAUAAQAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAEAAQAAAAAAAAAAAAIAAQAAAAAAAAAAAAMAAQAAAAAAAAAAAAQAAQAAAAAAAAAAAAUAAQAAAAAAAAAAAAYAAQAAAAAAAAAAAAcAAQAAAAAAAAAAAAgAAQAAAAAAAAAAAAkAAQAAAAAAAAAAAAoAAQAAAAAAAAAAAAsAAQAAAAAAAAAAAAwAAQAAAAAAAAAAAA0AAQAAAAAAAAAAAA4AAQAAAAAAAAAAAA8AAQAAAAAAAAAAABAAAQAAAAAAAAABABAAAQAAAAAAAAACAAAAAQAAAAAAAAACABAAAQAAAAAAAAADAAAAAQAAAAAAAAADABAAAQAAAAAAAAAEAAAAAQAAAAAAAAAEABAAAQAAAAAAAAAFAAAAAQAAAAAAAAAFABAAAQAAAAAAAAAGAAAAAQAAAAAAAAAGABAAAQAAAAAAAAAHAAAAAQAAAAAAAAAHABAAAQAAAAAAAAAIAAAAAQAAAAAAAAAIABAAAQAAAAAAAAAJAAAAAQAAAAAAAAAJABAAAQAAAAAAAAAKAAAAAQAAAAAAAAAKABAAAQAAAAAAAAALAAAAAQAAAAAAAAALABAAAQAAAAAAAAAMAAAAAQAAAAAAAAAMABAAAQAAAAAAAAANAAAAAQAAAAAAAAANABAAAQAAAAAAAAAOAAAAAQAAAAAAAAAOABAAAQAAAAAAAAAPAAAAAQAAAAAAAAAPABAAAQAAAAAAAAAQAAAAAQAAAAAAAAAQABAAAQAAAAAAAAARAAAAAQAAAAAAAAARABAAAQAAAAAAAAASAAAAAQAAAAAAAAASABAAAQAAAAAAAAATAAAAAQAAAAAAAAATABAAAQAAAAAAAAAUAAAAAQAAAAAAAAAUABAAAQAAAAAAAAAVAAAAAQAAAAAAAAAVABAAAQAAAAAAAAAWAAAAAQAAAAAAAAAWABAAAQAAAAAAAAAXAAAAAQAAAAAAAAAXABAAAQAAAAAAAAAYAAAAAQAAAAAAAAAYABAAAQAAAAAAAAAZAAAAAQAAAAAAAAAZABAAAQAAAAAAAAAaAAAAAQAAAAAAAAAaABAAAQAAAAAAAAAbAAAAAQAAAAAAAAAbABAAAQAAAAAAAAAcAAAAAQAAAAAAAAAcABAAAQAAAAAAAAAdAAAAAQAAAAAAAAAdAAEAAQAAAAAAAAAdAAIAAQAAAAAAAAAdAAMAAQAAAAAAAAAdAAQAAQAAAAAAAAAdAAUAAQAAAAAAAAAdAAYAAQAAAAAAAAAdAAcAAQAAAAAAAAAdAAgAAQAAAAAAAAAdAAkAAQAAAAAAAAAdAAoAAQAAAAAAAAAdAAsAAQAAAAAAAAAdAAwAAQAAAAAAAAAdAA0AAQAAAAAAAAAdAA4AAQAAAAAAAAAdAA8AAQAAAAAAAAAdABAAAQAAAAAAAAAGAAcAAQAAAAAAAAAHAAcAAQAAAAAAAAAIAAcAAQAAAAAAAAAJAAcAAQAAAAAAAAAKAAcAAQAAAAAAAAALAAcAAQAAAAAAAAAMAAcAAQAAAAAAAAANAAcAAQAAAAAAAAAcAAcAAQAAAAAAAAAOAAkAAQAAAAAAAAAOAAoAAQAAAAAAAAAOAAsAAQAAAAAAAAAOAAwAAQAAAAAAAAAOAA0AAQAAAAAAAAAOAA4AAQAAAAAAAAAOAA8AAQAAAAAAAAASAA8AAQAAAAAAAAASAA4AAQAAAAAAAAASAA0AAQAAAAAAAAASAAwAAQAAAAAAAAASAAsAAQAAAAAAAAASAAoAAQAAAAAAAAASAAkAAQAAAAAAAAASAAgAAQAAAAAAAAASAAcAAQAAAAAAAAATAAEAAQAAAAAAAAATAAIAAQAAAAAAAAATAAMAAQAAAAAAAAAOAAcAAQAAAAAAAAAOAAgAAQAAAAAAAAAbAAcAAQAAAAAAAAAaAAcAAQAAAAAAAAAZAAcAAQAAAAAAAAAYAAcAAQAAAAAAAAAXAAcAAQAAAAAAAAAWAAcAAQAAAAAAAAAVAAcAAQAAAAAAAAAUAAcAAQAAAAAAAAATAAcAAQAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAQAAAAAAAAA=")
 tile_set = ExtResource("4_tt1th")
+
+[node name="Door" parent="." instance=ExtResource("10_gci8k")]
+position = Vector2(1216, 448)
+
+[connection signal="change_state" from="Button" to="Door" method="change_state"]
