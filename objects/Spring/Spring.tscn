@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0nm5jey6x4tm"]
+
+[ext_resource type="Texture2D" uid="uid://d2p7ffyg5qfr0" path="res://assets/bfdi_assets/assembled images/Spring.png" id="1_46lng"]
+[ext_resource type="Script" uid="uid://dne66jjqxgec1" path="res://objects/Spring/spring.gd" id="1_pphtb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rbodg"]
+size = Vector2(128, 50)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mq0q2"]
+size = Vector2(144, 100)
+
+[node name="Spring" type="Node2D"]
+script = ExtResource("1_pphtb")
+
+[node name="EnterArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="EnterArea"]
+position = Vector2(0, -6)
+shape = SubResource("RectangleShape2D_rbodg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 30)
+texture = ExtResource("1_46lng")
+
+[node name="ExitArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ExitArea"]
+position = Vector2(0, -30)
+shape = SubResource("RectangleShape2D_mq0q2")
+debug_color = Color(0.737255, 0.305882, 0.882353, 0.419608)
+
+[connection signal="body_entered" from="EnterArea" to="." method="_on_body_entered"]
+[connection signal="body_exited" from="ExitArea" to="." method="_on_body_exited"]

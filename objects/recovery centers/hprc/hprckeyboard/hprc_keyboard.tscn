@@ -1,0 +1,39 @@
+[gd_scene load_steps=4 format=3 uid="uid://bx71haoa5dk20"]
+
+[ext_resource type="Texture2D" uid="uid://cqy1wiuld6cpg" path="res://assets/bfdi_assets/assembled images/HPRCKeyboard.png" id="1_45467"]
+[ext_resource type="FontFile" uid="uid://g4vd0nt1gof2" path="res://assets/fonts/11524_DigifaceRegular.ttf" id="2_qbkau"]
+
+[sub_resource type="Theme" id="Theme_766u7"]
+default_font = ExtResource("2_qbkau")
+LineEdit/colors/caret_color = Color(0, 0, 0, 0)
+LineEdit/colors/font_color = Color(0, 1, 0.00392157, 1)
+LineEdit/colors/font_placeholder_color = Color(0, 1, 0.00392157, 1)
+LineEdit/constants/caret_width = 0
+LineEdit/font_sizes/font_size = 110
+
+[node name="HPRCKeyboard" type="Sprite2D"]
+z_index = 99
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_45467")
+
+[node name="LineEdit" type="LineEdit" parent="."]
+anchors_preset = -1
+anchor_left = 0.0022779
+anchor_right = 0.0022779
+anchor_bottom = 0.0292398
+offset_left = -396.0
+offset_top = -292.0
+offset_right = 323.0
+offset_bottom = -168.0
+theme = SubResource("Theme_766u7")
+placeholder_text = "Enter name"
+alignment = 1
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+shortcut_keys_enabled = false
+middle_mouse_paste_enabled = false
+selecting_enabled = false
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+secret_character = " "
+metadata/_edit_use_anchors_ = true

@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://xesvpi7q3ltk"]
+
+[ext_resource type="Texture2D" uid="uid://naaxq2drs5cp" path="res://assets/new_assets/Conveyor belt1.png" id="1_swbea"]
+[ext_resource type="Texture2D" uid="uid://bcansd4ivql1h" path="res://assets/new_assets/Conveyor belt2.png" id="2_kjq12"]
+[ext_resource type="Script" uid="uid://cqh7ss4s58p57" path="res://objects/conveyor belt/belt.gd" id="3_mefc4"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhhuy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_swbea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kjq12")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehg68"]
+size = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jtfqh"]
+size = Vector2(66, 72)
+
+[node name="Belt" type="StaticBody2D"]
+collision_layer = 7
+
+[node name="StaticBody2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2.38419e-07, 0)
+sprite_frames = SubResource("SpriteFrames_qhhuy")
+autoplay = "default"
+frame_progress = 0.0179443
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ehg68")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("3_mefc4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_jtfqh")
+debug_color = Color(0.737255, 0.305882, 0.882353, 0.419608)
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
