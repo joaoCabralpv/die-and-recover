@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://qheqe3kbly0i"]
+
+[ext_resource type="Script" path="res://nodes/level_button.gd" id="1_uj0aw"]
+[ext_resource type="Texture2D" uid="uid://cftko5utx7xr0" path="res://assets/new_assets/Button.png" id="2_uyup1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_grtdk"]
+size = Vector2(58, 48)
+
+[node name="Button" type="Area2D"]
+z_index = -1
+collision_layer = 4
+collision_mask = 3
+script = ExtResource("1_uj0aw")
+
+[node name="Button" type="Sprite2D" parent="."]
+texture = ExtResource("2_uyup1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_grtdk")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
